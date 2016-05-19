@@ -1,13 +1,14 @@
-![hapi logo](images/hapi.png) ![pouchdb logo](images/pouchdb-logo.svg)
+![hapi logo](images/hapi.png)
 
 # REST api with hapi
 
 ## Cody Zuschlag
 
 
-##this is a vert slide?
+![pouchdb logo](images/pouchdb-logo.svg)
 
-with data
+# PouchDB
+
 
 
 
