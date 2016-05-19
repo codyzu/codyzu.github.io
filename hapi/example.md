@@ -1,3 +1,5 @@
+![hapi logo](images/hapi.png)
+
 # REST api with hapi
 
 ## Cody Zuschlag
