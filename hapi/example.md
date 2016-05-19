@@ -1,6 +1,6 @@
-# this is the first slide
+# REST api with hapi
 
-this is some data
+## Cody Zuschlag
 
 
 ##this is a vert slide?
