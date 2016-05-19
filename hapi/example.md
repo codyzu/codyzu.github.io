@@ -1,4 +1,4 @@
-![hapi logo](images/hapi.png)
+![hapi logo](images/hapi.png) ![pouchdb logo](pouchdb-logo.svg)
 
 # REST api with hapi
 
