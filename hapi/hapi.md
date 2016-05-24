@@ -17,8 +17,8 @@
 
 ## why
 
-1. works good for big teams
-  1. helps with code structure
+1. big teams
+1. code isolation
 
 
 ## differences
