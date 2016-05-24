@@ -10,28 +10,10 @@
 # hapi.js
 
 
-
-![pouchdb logo](images/pouchdb.png)
-
-# PouchDB
-
-* open source js db
-* can sync
-* backends:
-  * couchdb
-  * leveldb/leveldown (in-memory, sqlite, sql)
-
-pouchdb.com
-
-
-
-# express.js
-
-
 ## why
 
 1. big teams
-1. code isolation
+2. code isolation
 
 
 ## differences
@@ -39,6 +21,23 @@ pouchdb.com
 * modular, no middlewares, everything plugins, some events
 * plugins
   * inter-plugin dependencies
+
+
+
+![pouchdb logo](images/pouchdb.png)
+pouchdb.com
+
+* open source js db
+* can sync
+
+
+## backends
+* couchdb
+* leveldb/leveldown (in-memory, sqlite, sql)
+
+
+
+# express.js
 
 
 
