@@ -1,9 +1,14 @@
-![hapi logo](images/hapi.png)
-
 # REST api with hapi
 
 ###Cody Zuschlag
 ![cody](images/cody1_bw_100px.jpg)
+
+
+
+![hapi logo](images/hapi.png)
+
+# hapi.js
+
 
 
 ![pouchdb logo](images/pouchdb.png)
