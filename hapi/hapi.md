@@ -14,14 +14,31 @@
 
 # express.js
 
+
 ## why
 
 1. works good for big teams
   1. helps with code structure
 
+
 ## differences
 
 * modular, no middlewares, everything plugins, some events
+* plugins
+  * inter-plugin dependencies
+
+
+
+# Outline
+1. hello world
+2. plugins
+3. declaritive config
+4. validation (get/post)
+5. pouchdb
+6. models
+7. pre-handlers
+8. tests
+
 
 
 # links
