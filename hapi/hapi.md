@@ -10,6 +10,14 @@
 
 # PouchDB
 
+* open source js db
+* can sync
+* backends:
+  * couchdb
+  * leveldb/leveldown (in-memory, sqlite, sql)
+
+pouchdb.com
+
 
 
 # express.js
