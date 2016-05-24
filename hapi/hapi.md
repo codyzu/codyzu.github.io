@@ -25,7 +25,8 @@
 
 
 ![pouchdb logo](images/pouchdb.png)
-pouchdb.com
+
+[pouchdb.com](pouchdb.com)
 
 * open source js db
 * can sync
@@ -38,6 +39,8 @@ pouchdb.com
 
 
 # express.js
+
+## issues
 
 
 
