@@ -17,8 +17,11 @@
 ## why
 
 1. works good for big teams
- a. helps with code structure
+  1. helps with code structure
 
+## differences
+
+* modular, no middlewares, everything plugins, some events
 
 
 # links
