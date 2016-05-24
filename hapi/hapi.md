@@ -4,6 +4,14 @@
 ![cody](images/cody1_bw_100px.jpg)
 
 
+![hoodie](images/hoodie.png)
+
+* Member [hoodie](http://hood.ie) project (server using hapi + pouchdb)
+* express.js REST apis for **Axway Engage**
+* New keystore microservice using hapi for **Axway Engage**
+* Passionate for everything node.js!
+
+
 
 ![hapi logo](images/hapi.png)
 
@@ -30,6 +38,7 @@
 
 * open source js db
 * can sync
+* db for npm
 
 
 ## backends
@@ -56,7 +65,7 @@
 
 
 
-# Hello world
+## Hello world
 
 ```javascript
 import hapi from 'hapi'
