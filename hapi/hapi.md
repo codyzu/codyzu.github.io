@@ -126,15 +126,33 @@ features start in core -> moved to plugin if not 'core' feature
 
 [pouchdb.com](pouchdb.com)
 
-* open source js db
-* can sync
+* open source javascript db
+* browser **and** node.js
+* "offline first" (mobile: offline should _not_ be an error)
 * db for npm
+* works with couchdb protocol
 
 
 ## backends
 
 * couchdb
+* cloud
 * leveldb/leveldown (in-memory, sqlite, sql)
+
+
+## documents
+* json
+* _id
+* _rev (optimistic concurrency)
+
+```
+{
+  "_id": "dfasf",
+  "_rev": "dfsfaf",
+  "name": "my name",
+  "description": "description"
+}
+```
 
 
 
@@ -188,15 +206,20 @@ server.start((err) => {
 
 # prerequisites
 
-* git
-* node (v5 or v6)
-  * nvm is better! https://github.com/creationix/nvm)
-* npm (included in node)
-* decent editor:
-  * atom
-  * sublime v3
-    * standard (http://standardjs.com/index.html#text-editor-plugins)
-    * sublimelinter-contrib-standard (https://github.com/Flet/SublimeLinter-contrib-standard)
-    * tern (https://github.com/ternjs/tern_for_sublime)
-  * visualstudio code
-    * vscode-standard (https://github.com/shinnn/vscode-standard)
+* [git](https://git-scm.com/)
+* [node](https://nodejs.org/en/download/) v5 or v6
+  * [nvm](https://github.com/creationix/nvm) is better!
+* [npm](https://www.npmjs.com/) (included in node)
+
+
+## editor
+* [atom](https://atom.io/) _used by me_
+  * [linter-js-standard](https://atom.io/packages/linter-js-standard)
+  * [ternjs](https://atom.io/packages/atom-ternjs)
+* [sublime v3](https://www.sublimetext.com/3)
+  * [sublimelinter-contrib-standard](https://github.com/Flet/SublimeLinter-contrib-standard) _see also [standardjs](http://standardjs.com/index.html#text-editor-plugins)_
+  * [ternjs](https://github.com/ternjs/tern_for_sublime)
+* [visualstudio code](https://code.visualstudio.com/)
+  * [vscode-standard](https://github.com/shinnn/vscode-standard)
+
+_note: you will have the best experience with one of the above (no intellij)_
