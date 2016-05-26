@@ -37,6 +37,10 @@ _from [https://youtu.be/Recv7vR8ZlA](https://youtu.be/Recv7vR8ZlA)_
 * routes matched by regex
 * req / res -> wrapped native node objects with added fields
 
+Note:
+dirty, changes to node ~> broken?
+mixes http and business logic (hard to decouple)
+
 
 ## middlewares & routes
 
@@ -45,18 +49,9 @@ _from [https://youtu.be/Recv7vR8ZlA](https://youtu.be/Recv7vR8ZlA)_
   * _no limit on size_ (out of memory!)
 * complicated to stream directly into file
 
-
-* req / res -> native node objects + added fields
-  * _dirty_
-  * node changes ~> broken?
+Note:
 * undocumented dependencies (and order) between middlewares!
-* mix http and business logic
-  * wrapped native objects
-  * hard to decouple business logic
 * parse (by default) does not limit size of payload (out of memory!) (unknown unless you look at implementation)
-
-
-## issues
 
 
 
@@ -153,6 +148,15 @@ features start in core -> moved to plugin if not 'core' feature
   "description": "description"
 }
 ```
+
+
+## indexes
+
+Use them!
+
+* https://pouchdb.com/2014/06/17/12-pro-tips-for-better-code-with-pouchdb.html
+* https://pouchdb.com/2014/05/01/secondary-indexes-have-landed-in-pouchdb.html
+*
 
 
 
