@@ -201,10 +201,16 @@ server.start((err) => {
 
 
 # links
+## hapi
 
 * https://youtu.be/B3u0XkbhleA?list=PLB7q09icyCHVp3YLoYigTK5JisixHEBf6
 * https://youtu.be/Recv7vR8ZlA?list=PLB7q09icyCHVp3YLoYigTK5JisixHEBf6
 * https://youtu.be/ybX2s_sFdnk?list=PLB7q09icyCHVp3YLoYigTK5JisixHEBf6
+
+
+## pouchdb
+
+* https://youtu.be/7L7esHWAjSU
 
 
 
