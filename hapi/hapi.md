@@ -137,8 +137,8 @@ features start in core -> moved to plugin if not 'core' feature
 
 ## documents
 * json
-* _id
-* _rev (optimistic concurrency)
+* \_id
+* \_rev (optimistic concurrency)
 
 ```
 {
@@ -156,7 +156,6 @@ Use them!
 
 * https://pouchdb.com/2014/06/17/12-pro-tips-for-better-code-with-pouchdb.html
 * https://pouchdb.com/2014/05/01/secondary-indexes-have-landed-in-pouchdb.html
-*
 
 
 
@@ -170,6 +169,15 @@ Use them!
 6. models
 7. pre-handlers
 8. tests
+
+
+# TODO
+
+1. rename urls (add orgs prefix from begining)
+2. add swagger docs soon so we can use swagger UI?
+3. simplify good config sooner
+4. add swagger examples sooner?
+5. name param validation to validations.js
 
 
 
