@@ -162,22 +162,38 @@ Use them!
 # Outline
 
 1. hello world
-2. plugins
-3. declaritive config
-4. validation (get/post)
-5. pouchdb
-6. models
-7. pre-handlers
-8. tests
+1. plugins
+1. declaritive config
+1. validation (get/post)
+1. pouchdb
+1. models
+1. pre-handlers (http://hapijs.com/api#route-prerequisites)
+1. tests
 
 
 # TODO
 
 1. rename urls (add orgs prefix from begining)
-2. add swagger docs soon so we can use swagger UI?
-3. simplify good config sooner
-4. add swagger examples sooner?
-5. name param validation to validations.js
+1. add swagger docs soon so we can use swagger UI?
+1. simplify good config sooner
+1. add swagger examples sooner?
+1. name param validation to validations.js
+1. pass pouch as constructor to model from begining (reduce refactoring)
+
+
+# Exercises
+1. ...
+1. create plugin for models
+1. use models plugin in handler (after decorating server)
+1. after adding first 'pre' handler, refactor remaining handlers
+
+
+
+# Out of Scope
+## _see also_
+
+* templates & views
+* request lifecycle
 
 
 
