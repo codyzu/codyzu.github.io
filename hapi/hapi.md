@@ -159,7 +159,7 @@ Use them!
 
 
 
-# Outline
+## Outline
 
 1. hello world
 1. plugins
@@ -171,7 +171,26 @@ Use them!
 1. tests
 
 
-# TODO
+## Outline v2
+
+1. hello world
+1. getByName
+1. config (glue)
+1. blip+good
+1. swagger+tag apis
+1. post (in memory db)
+1. getAll
+1. api to plugin
+1. prefixes to config
+1. complete validations (+swagger doc, examples/defaults, could do sooner)
+1. extract validations to file
+1. handlers into config, extract config to file
+1. extract handlers
+1. create org model (memdown, pouchdb in constructor)
+1. 
+
+
+## TODO
 
 1. rename urls (add orgs prefix from begining)
 1. add swagger docs soon so we can use swagger UI?
