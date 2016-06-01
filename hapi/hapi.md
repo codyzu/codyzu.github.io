@@ -177,7 +177,7 @@ Use them!
 1. getByName
 1. config (glue)
 1. blip+good
-1. swagger+tag apis
+1. swagger+tag apis (fix console URL include /documentation)
 1. post (in memory db)
 1. getAll
 1. api to plugin
@@ -187,7 +187,22 @@ Use them!
 1. handlers into config, extract config to file
 1. extract handlers
 1. create org model (memdown, pouchdb in constructor)
-1. 
+1. demo: pouch in memory vs persistent (leave in memory) (can change order)
+1. demo: test model index (or test?)
+1. create model plugin
+1. load plugin in config
+1. getAll -> model
+1. model in all handlers
+1. errors: catch(reply)
+1. errors: catch(reply: boom)
+1. prepare response inline (getByName)
+1. demo prepare in function, misses access to request
+1. prepare as pre handler
+1. refactor handlers: use arrays for common type
+1. bug: post -> 200, want 201
+1. add ok and created handler
+1. error handling? (out of scope)
+1. tests
 
 
 ## TODO
@@ -213,6 +228,7 @@ Use them!
 
 * templates & views
 * request lifecycle
+* generic error handler / failActions
 
 
 
