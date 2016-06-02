@@ -173,36 +173,43 @@ Use them!
 
 ## Outline v2
 
-1. hello world
-1. getByName
-1. config (glue)
-1. blip+good
-1. swagger+tag apis (fix console URL include /documentation)
-1. post (in memory db)
-1. getAll
-1. api to plugin
-1. prefixes to config
-1. complete validations (+swagger doc, examples/defaults, could do sooner)
-1. extract validations to file
-1. handlers into config, extract config to file
-1. extract handlers
-1. create org model (memdown, pouchdb in constructor)
-1. demo: pouch in memory vs persistent (leave in memory) (can change order)
-1. demo: test model index (or test?)
-1. create model plugin
-1. load plugin in config
-1. getAll -> model
-1. model in all handlers
-1. errors: catch(reply)
-1. errors: catch(reply: boom)
-1. prepare response inline (getByName)
-1. demo prepare in function, misses access to request
-1. prepare as pre handler
-1. refactor handlers: use arrays for common type
-1. bug: post -> 200, want 201
-1. add ok and created handler
-1. error handling? (out of scope)
-1. tests
+1. Introduction
+  1. hello world
+  1. getByName
+1. configuration / plugins / swagger
+  1. config (glue)
+  1. blip+good
+  1. swagger+tag apis (fix console URL include /documentation)
+1. CRUDL (almost)
+  1. post (in memory db)
+  1. getAll
+  1. complete validations (+swagger doc, examples/defaults, could do sooner)
+1. code organization (plugins)
+  1. api to plugin
+  1. prefixes to config
+  1. handlers into config, extract config to file
+  1. extract handlers
+  1. extract validations to file
+1. models
+  1. create org model (memdown, pouchdb in constructor)
+  1. demo: pouch in memory vs persistent (leave in memory) (can change order)
+  1. demo: test model index (or test?)
+  1. create model plugin
+  1. load plugin in config
+  1. getAll -> model
+  1. model in all handlers
+1. error handling
+  1. errors: catch(reply)
+  1. errors: catch(reply: boom)
+  1. info: vs global handler (`'onPreResponse'`, http://hapijs.com/api#error-transformation)
+1. response preparation -> `pre`s and modular handlers
+  1. prepare response inline (getByName)
+  1. demo prepare in function, misses access to request
+  1. prepare as pre handler
+  1. refactor handlers: use arrays for common type
+  1. bug: post -> 200, want 201
+  1. add ok and created handler
+1. tests (out of scope)
 
 
 ## TODO
