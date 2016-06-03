@@ -181,7 +181,7 @@ Use them!
   1. blip+good
   1. swagger+tag apis (fix console URL include /documentation)
 1. CRUDL (almost)
-  1. post (in memory db)
+  1. post (validate body, in memory db)
   1. getAll
   1. complete validations (+swagger doc, examples/defaults, could do sooner)
 1. code organization (plugins)
