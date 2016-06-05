@@ -192,19 +192,20 @@ Use them!
   1. extract validations to file
 1. models
   1. create org model (memdown, pouchdb in constructor)
-  1. demo: pouch in memory vs persistent (leave in memory) (can change order)
   1. demo: test model index (or test?)
   1. create model plugin
   1. load plugin in config
   1. getAll -> model
   1. model in all handlers
+  1. demo: pouch in memory vs persistent (leave in memory) (can change order)
 1. error handling
   1. errors: catch(reply)
+  1. info: boom, how hapi deals with errors (500 for non boom errors)
   1. errors: catch(reply: boom)
   1. info: vs global handler (`'onPreResponse'`, http://hapijs.com/api#error-transformation)
 1. response preparation -> `pre`s and modular handlers
   1. prepare response inline (getByName)
-  1. demo prepare in function, misses access to request
+  1. demo: prepare in function, misses access to request
   1. prepare as pre handler
   1. refactor handlers: use arrays for common type
   1. bug: post -> 200, want 201
@@ -221,12 +222,22 @@ Use them!
 1. name param validation to validations.js
 1. pass pouch as constructor to model from begining (reduce refactoring)
 
+1. speak about server.decorate
+1. revisit plugin prefix:
+  * does it make sense to have orgs prefix in the config?
+  * using v1 in the plugin prefix makes the urls wrong
+  * remove v1 prefix?
+1. add url schema to get/getAll
+
 
 # Exercises
-1. ...
+1. after add 'in-memory' db to POST, add to other handlers
+1. after extracting plugin config and handlers, extract/refactor validations
+  * setup: create empty validations.js and import \*
+  * speak about importing using validation objects inside validate config block (don't move entire validate block)
 1. create plugin for models
-1. use models plugin in handler (after decorating server)
-1. after adding first 'pre' handler, refactor remaining handlers
+1. after using models in getAll, use models in other handlers
+1. after adding first 'pre' handler, refactor remaining handlers (hint: given stubs, use an array of orgs)
 
 
 
