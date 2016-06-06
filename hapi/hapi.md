@@ -1,7 +1,10 @@
 # REST api with hapi
 
 ###Cody Zuschlag
-![cody](images/cody1_bw_100px.jpg)
+
+Senior Software Engineer
+
+Axway Engage
 
 
 ![hoodie](images/hoodie.png)
@@ -33,9 +36,9 @@ _from [https://youtu.be/Recv7vR8ZlA](https://youtu.be/Recv7vR8ZlA)_
 
 ## middlewares & routes
 
-* middlewares === chain of functions
-* routes matched by regex
-* req / res -> wrapped native node objects with added fields
+* middlewares === chain of functions  <!-- .element: class="fragment fade-in" -->  <!-- .element: class="fragment fade-out" -->
+* routes matched by regex <!-- .element: class="fragment highlight-red" -->
+* req / res -> wrapped native node objects with added fields <!-- .element: class="fragment highlight-red" -->
 
 Note:
 dirty, changes to node ~> broken?
@@ -58,6 +61,9 @@ Note:
 ![hapi logo](images/hapi.png)
 
 # hapi.js
+
+
+<iframe data-autoplay class="stretch" width="853" height="480" src="https://www.youtube.com/embed/y6Sxv-sUYtM?rel=0&amp;showinfo=0&start=35&end=60" frameborder="0" allowfullscreen></iframe>
 
 
 # not bad...
@@ -192,23 +198,23 @@ Use them!
   1. extract validations to file
 1. models
   1. create org model (memdown, pouchdb in constructor)
-  1. demo: test model index (or test?)
+  1. _demo:_ test model index (or test?)
   1. create model plugin
   1. load plugin in config
   1. getAll -> model
   1. model in all handlers
-  1. demo: pouch in memory vs persistent (leave in memory) (can change order)
+  1. _demo:_ pouch in memory vs persistent (leave in memory) (can change order)
 1. error handling
   1. errors: catch(reply)
-  1. info: boom, how hapi deals with errors (500 for non boom errors)
+  1. _info:_ boom, how hapi deals with errors (500 for non boom errors)
   1. errors: catch(reply: boom)
-  1. info: vs global handler (`'onPreResponse'`, http://hapijs.com/api#error-transformation)
+  1. _info:_ vs global handler (`'onPreResponse'`, http://hapijs.com/api#error-transformation)
 1. response preparation -> `pre`s and modular handlers
   1. prepare response inline (getByName)
-  1. demo: prepare in function, misses access to request
+  1. _demo:_ prepare in function, misses access to request
   1. prepare as pre handler
   1. refactor handlers: use arrays for common type
-  1. bug: post -> 200, want 201
+  1. _bug:_ post -> 200, want 201
   1. add ok and created handler
 1. tests (out of scope)
 
