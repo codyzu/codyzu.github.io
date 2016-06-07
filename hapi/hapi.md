@@ -31,7 +31,7 @@ _25 May 2016_
 
 ## middlewares & routes
 
-* middlewares === chain of functions  <!-- .element: class="fragment fade-in" -->
+* middlewares === chain of functions <!-- .element: class="fragment fade-in" -->
 * routes matched by regex <!-- .element: class="fragment fade-in" -->
 * req / res -> wrapped native node objects with added fields <!-- .element: class="fragment fade-in" -->
 
@@ -121,6 +121,40 @@ features start in core -> moved to plugin if not 'core' feature
 # 100% coverage
 
 "for every percent between 85 and 100... we found at least 1 bug"
+
+
+## Hello world
+
+```javascript
+import hapi from 'hapi'
+```
+<!-- .element: class="fragment fade-up" -->
+```javascript
+const server = new hapi.Server()
+server.connection({port: 3000})
+```
+<!-- .element: class="fragment fade-up" -->
+```javascript
+server.route({
+  method: 'GET',
+  path: '/',
+  handler: (request, reply) => {
+    reply('Hello world!')
+  }
+})
+```
+<!-- .element: class="fragment fade-up" -->
+```javascript
+server.start((err) => {
+  if (err) {
+    throw err
+  }
+
+  console.log(`Server running at: ${server.info.uri}`)
+})
+```
+<!-- .element: class="fragment fade-up" -->
+
 
 
 
@@ -254,33 +288,6 @@ Use them!
 * templates & views
 * request lifecycle
 * generic error handler / failActions
-
-
-
-## Hello world
-
-```javascript
-import hapi from 'hapi'
-
-const server = new hapi.Server()
-server.connection({port: 3000})
-
-server.route({
-  method: 'GET',
-  path: '/',
-  handler: (request, reply) => {
-    reply('Hello world!')
-  }
-})
-
-server.start((err) => {
-  if (err) {
-    throw err
-  }
-
-  console.log(`Server running at: ${server.info.uri}`)
-})
-```
 
 
 
