@@ -26,35 +26,27 @@ Axway Engage
 # amazing!
 ![express npm stats](images/express-npm-stats.png)
 
+_25 May 2016_
+
 
 ## middlewares & routes
+
+* middlewares === chain of functions  <!-- .element: class="fragment fade-in" -->
+* routes matched by regex <!-- .element: class="fragment fade-in" -->
+* req / res -> wrapped native node objects with added fields <!-- .element: class="fragment fade-in" -->
+
+Note:
+
+* **order matters!**
+* body-parser _must be before_ cookie parser: undocumented dependencies (and order) between middlewares!
+* TODO? Is this still true? parser reads body objects into memory before parsing _no limit on size_ (out of memory!)
+* dirty, changes to node ~> broken?
+* mixes http and business logic (hard to decouple)
+
 
 ![express-middlewares](images/express-middleware.png)
 
 _from [https://youtu.be/Recv7vR8ZlA](https://youtu.be/Recv7vR8ZlA)_
-
-
-## middlewares & routes
-
-* middlewares === chain of functions  <!-- .element: class="fragment fade-in" -->  <!-- .element: class="fragment fade-out" -->
-* routes matched by regex <!-- .element: class="fragment highlight-red" -->
-* req / res -> wrapped native node objects with added fields <!-- .element: class="fragment highlight-red" -->
-
-Note:
-dirty, changes to node ~> broken?
-mixes http and business logic (hard to decouple)
-
-
-## middlewares & routes
-
-* **order matters!** body-parser _before_ cookie-parser
-* now all body objects are read into memory
-  * _no limit on size_ (out of memory!)
-* complicated to stream directly into file
-
-Note:
-* undocumented dependencies (and order) between middlewares!
-* parse (by default) does not limit size of payload (out of memory!) (unknown unless you look at implementation)
 
 
 
@@ -66,18 +58,20 @@ Note:
 ## Why???
 
 
-<iframe data-autoplay class="stretch" width="853" height="480" src="https://www.youtube.com/embed/y6Sxv-sUYtM?rel=0&amp;showinfo=0&start=35&end=60" frameborder="0" allowfullscreen></iframe>
+<iframe data-autoplay class="stretch" width="853" height="480" src="https://www.youtube.com/embed/y6Sxv-sUYtM?rel=0&amp;showinfo=0&start=132&end=162" frameborder="0" allowfullscreen></iframe>
 
 
 # not bad...
 ![express npm stats](images/hapi-npm-stats.png)
+
+_25 May 2016_
 
 
 ## history
 
 * born in yahoo -> walmart
 * mobile site (single point, proxy)
-* "heavy on network, light on processing... streaming"
+* node.js: "heavy on network, light on processing... streaming"
 * built on express.js
 
 
@@ -90,8 +84,12 @@ Note:
 ## differences
 
 * modular, no middlewares, everything plugins, some events
-* plugins
+* plugins:
   * inter-plugin dependencies
+  * code isolation -> better for big teams
+* configuration over ???:
+  * easier to validate
+* caching built-in
 
 
 # wishlist
