@@ -50,6 +50,10 @@ _from [https://youtu.be/Recv7vR8ZlA](https://youtu.be/Recv7vR8ZlA)_
 
 
 
+<!-- .slide: data-background-image="http://i.giphy.com/pcC2u7rl89b44.gif" -->
+
+
+
 ![hapi logo](images/hapi.png)
 
 # hapi.js
@@ -200,6 +204,81 @@ Use them!
 
 
 
+# Out of Scope
+### _see also_
+
+* cache
+* templates & views
+* request lifecycle
+* generic error handler / failActions
+
+
+
+# links
+### hapi
+
+* https://youtu.be/B3u0XkbhleA?list=PLB7q09icyCHVp3YLoYigTK5JisixHEBf6
+* https://youtu.be/Recv7vR8ZlA?list=PLB7q09icyCHVp3YLoYigTK5JisixHEBf6
+* https://youtu.be/ybX2s_sFdnk?list=PLB7q09icyCHVp3YLoYigTK5JisixHEBf6
+
+
+### pouchdb
+
+* https://youtu.be/7L7esHWAjSU
+
+
+
+# Exercises
+
+see [prerequisites](#/prerequisites)
+
+
+### after add 'in-memory' db to POST, add to other handlers
+
+
+### after extracting plugin config and handlers, extract/refactor validations
+
+* setup: create empty validations.js and import \*
+* speak about importing using validation objects inside validate config block (don't move entire validate block)
+
+
+### create plugin for models
+
+
+### after using models in getAll, use models in other handlers
+
+
+### after adding first 'pre' handler, refactor remaining handlers (hint: given stubs, use an array of orgs)
+
+
+<!-- .slide: id="prerequisites" -->
+## Prerequisites: Tools
+
+* [git](https://git-scm.com/)
+* [node](https://nodejs.org/en/download/) v5 or v6
+  * [nvm](https://github.com/creationix/nvm) is better!
+* [npm](https://www.npmjs.com/) (included in node)
+
+
+## Prerequisites: editor
+
+* [atom](https://atom.io/) _used by me_
+  * [linter-js-standard](https://atom.io/packages/linter-js-standard)
+  * [ternjs](https://atom.io/packages/atom-ternjs)
+* [sublime v3](https://www.sublimetext.com/3)
+  * [sublimelinter-contrib-standard](https://github.com/Flet/SublimeLinter-contrib-standard) _see also [standardjs](http://standardjs.com/index.html#text-editor-plugins)_
+  * [ternjs](https://github.com/ternjs/tern_for_sublime)
+* [visualstudio code](https://code.visualstudio.com/)
+  * [vscode-standard](https://github.com/shinnn/vscode-standard)
+
+_note: best experience with one of the above (no intellij)_
+
+
+
+<!-- .slide: data-background-image="http://i.giphy.com/RTXqWOJ3hDkcg.gif" -->
+
+Note:
+
 ## Outline
 
 1. hello world
@@ -210,7 +289,6 @@ Use them!
 1. models
 1. pre-handlers (http://hapijs.com/api#route-prerequisites)
 1. tests
-
 
 ## Outline v2
 
@@ -253,7 +331,6 @@ Use them!
   1. add ok and created handler
 1. tests (out of scope)
 
-
 ## TODO
 
 1. rename urls (add orgs prefix from begining)
@@ -269,58 +346,3 @@ Use them!
   * using v1 in the plugin prefix makes the urls wrong
   * remove v1 prefix?
 1. add url schema to get/getAll
-
-
-# Exercises
-1. after add 'in-memory' db to POST, add to other handlers
-1. after extracting plugin config and handlers, extract/refactor validations
-  * setup: create empty validations.js and import \*
-  * speak about importing using validation objects inside validate config block (don't move entire validate block)
-1. create plugin for models
-1. after using models in getAll, use models in other handlers
-1. after adding first 'pre' handler, refactor remaining handlers (hint: given stubs, use an array of orgs)
-
-
-
-# Out of Scope
-## _see also_
-
-* templates & views
-* request lifecycle
-* generic error handler / failActions
-
-
-
-# links
-## hapi
-
-* https://youtu.be/B3u0XkbhleA?list=PLB7q09icyCHVp3YLoYigTK5JisixHEBf6
-* https://youtu.be/Recv7vR8ZlA?list=PLB7q09icyCHVp3YLoYigTK5JisixHEBf6
-* https://youtu.be/ybX2s_sFdnk?list=PLB7q09icyCHVp3YLoYigTK5JisixHEBf6
-
-
-## pouchdb
-
-* https://youtu.be/7L7esHWAjSU
-
-
-
-# prerequisites
-
-* [git](https://git-scm.com/)
-* [node](https://nodejs.org/en/download/) v5 or v6
-  * [nvm](https://github.com/creationix/nvm) is better!
-* [npm](https://www.npmjs.com/) (included in node)
-
-
-## editor
-* [atom](https://atom.io/) _used by me_
-  * [linter-js-standard](https://atom.io/packages/linter-js-standard)
-  * [ternjs](https://atom.io/packages/atom-ternjs)
-* [sublime v3](https://www.sublimetext.com/3)
-  * [sublimelinter-contrib-standard](https://github.com/Flet/SublimeLinter-contrib-standard) _see also [standardjs](http://standardjs.com/index.html#text-editor-plugins)_
-  * [ternjs](https://github.com/ternjs/tern_for_sublime)
-* [visualstudio code](https://code.visualstudio.com/)
-  * [vscode-standard](https://github.com/shinnn/vscode-standard)
-
-_note: you will have the best experience with one of the above (no intellij)_
