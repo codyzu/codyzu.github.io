@@ -38,10 +38,12 @@ _25 May 2016_
 Note:
 
 * **order matters!**
-* body-parser _must be before_ cookie parser: undocumented dependencies (and order) between middlewares!
-* TODO? Is this still true? parser reads body objects into memory before parsing _no limit on size_ (out of memory!)
+* body-parser _must be before_ cookie parser (or passport): undocumented dependencies (and order) between middlewares!
+* ~~parser reads body objects into memory before parsing _no limit on size_ (out of memory!)~~ Not true with express 4
+* node by default uses streams for http connection, express makes it difficult to not parse *all the time*
 * dirty, changes to node ~> broken?
 * mixes http and business logic (hard to decouple)
+  * "no clean seperation between business logic and framework"
 
 
 ![express-middlewares](images/express-middleware.png)
@@ -59,7 +61,7 @@ _from [https://youtu.be/Recv7vR8ZlA](https://youtu.be/Recv7vR8ZlA)_
 # hapi.js
 
 
-## Why???
+# Why???
 
 
 <iframe data-autoplay class="stretch" width="853" height="480" src="https://www.youtube.com/embed/y6Sxv-sUYtM?rel=0&amp;showinfo=0&start=132&end=162" frameborder="0" allowfullscreen></iframe>
@@ -71,41 +73,47 @@ _from [https://youtu.be/Recv7vR8ZlA](https://youtu.be/Recv7vR8ZlA)_
 _25 May 2016_
 
 
-## history
+# history
 
 * born in yahoo -> walmart
 * mobile site (single point, proxy)
-* node.js: "heavy on network, light on processing... streaming"
-* built on express.js
+  * node.js: "heavy on network, light on processing... streaming"
+* originally built on express.js
 
 
-## why
+# why
 
+1. limitations in other frameworks
 1. big teams
-2. code isolation
+1. code isolation
 
 
 ## differences
 
-* modular, no middlewares, everything plugins, some events
-* plugins:
+* modular: <!-- .element: class="fragment fade-up" -->
+  * no middlewares
+  * everything plugins (+ some events)
+* plugins: <!-- .element: class="fragment fade-up" -->
   * inter-plugin dependencies
   * code isolation -> better for big teams
-* configuration over ???:
+* configuration over ???: <!-- .element: class="fragment fade-up" -->
   * easier to validate
-* caching built-in
+* caching built-in <!-- .element: class="fragment fade-up" -->
 
 
-# wishlist
+<!-- .slide: data-background-image="images/hapi-wishlist.png" data-background-size="contain" -->
 
-![hapi wishlist](images/hapi-wishlist.png)
+Note:
+_from [https://youtu.be/Recv7vR8ZlA?t=15m19s](https://youtu.be/Recv7vR8ZlA?t=15m19s)_
 
 
-# principles
+<!-- .slide: data-background-image="images/hapi-config-over-code.png" data-background-size="contain" -->
 
-![config over code](images/hapi-config-over-code.png)
+Note:
+_from [https://youtu.be/Recv7vR8ZlA?t=15m19s](https://youtu.be/Recv7vR8ZlA?t=15m19s)_
 
-_from https://youtu.be/Recv7vR8ZlA?t=15m19s _
+
+## Principles
 
 * config over code
   * can write code, but can _also_ do as much as possible with config
@@ -117,14 +125,24 @@ _from https://youtu.be/Recv7vR8ZlA?t=15m19s _
 * in node difficult to have conditional validation (if quary param then no body, etc) with callbacks
 
 
-### express is small (few hundred lines of code), hapi is big?
+# BIG framework?
+
+### express is small (few hundred lines of code)
+### hapi is big?
 
 features start in core -> moved to plugin if not 'core' feature
+<!-- .element: class="fragment fade-in" -->
+
+Note:
+
+normally in node.js we say "no big frameworks!"
 
 
 # 100% coverage
 
-"for every percent between 85 and 100... we found at least 1 bug"
+### "for every percent between 85 and 100... we found at least 1 bug"
+
+_- Eran Hammer_
 
 
 ## Hello world
@@ -207,10 +225,11 @@ Use them!
 # Out of Scope
 ### _see also_
 
-* cache
+* cache (also with server.method: interesting with user or user token)
 * templates & views
 * request lifecycle
 * generic error handler / failActions
+* testing (inject)
 
 
 
