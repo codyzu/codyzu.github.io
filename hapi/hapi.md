@@ -94,8 +94,8 @@ _25 May 2016_
   * no middlewares
   * everything plugins (+ some events)
 * plugins: <!-- .element: class="fragment fade-up" -->
+* code isolation -> better for big teams
   * inter-plugin dependencies
-  * code isolation -> better for big teams
 * configuration over ???: <!-- .element: class="fragment fade-up" -->
   * easier to validate
 * caching built-in <!-- .element: class="fragment fade-up" -->
@@ -250,6 +250,12 @@ Use them!
 # Exercises
 
 see [prerequisites](#/prerequisites)
+
+
+### hello world
+
+Note:
+write together
 
 
 ### after add 'in-memory' db to POST, add to other handlers
