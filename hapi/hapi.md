@@ -16,11 +16,11 @@ Axway Engage
 
 
 
-# express.js
-
 ![express](images/express.png)
 ![node express](images/node-express.jpg)
 ![node express mongo](images/node-express-mongo.jpg)
+
+# [expressjs.com](http://expressjs.com)
 
 
 # amazing!
@@ -58,7 +58,7 @@ _from [https://youtu.be/Recv7vR8ZlA](https://youtu.be/Recv7vR8ZlA)_
 
 ![hapi logo](images/hapi.png)
 
-# hapi.js
+# [hapijs.com](http://hapijs.com)
 
 
 # Why???
@@ -145,6 +145,30 @@ normally in node.js we say "no big frameworks!"
 _- Eran Hammer_
 
 
+
+# Live Coding part 1
+
+_see [prerequisites](#/prerequisites)_
+
+
+## Setup + Install
+
+```bash
+git clone https://github.com/codyzu/hapi-demo.git
+cd hapi-demo
+git checkout step00
+```
+
+<p class="fragment fade-up">
+end tag: ```step00```
+</p>
+
+```bash
+npm install
+```
+<!-- .element: class="fragment fade-up" -->
+
+
 ## Hello world
 
 ```javascript
@@ -177,12 +201,76 @@ server.start((err) => {
 ```
 <!-- .element: class="fragment fade-up" -->
 
+<p class="fragment fade-up">
+git tag: ```step01```
+</p>
+
+## getByName
+
+git tag: ```step02```
+
+## config + swagger
+
+## post
+
+
+## getOne
+## getAll
+(in memory)
+
+start tag: ```step03```
+
+**Exercise: Write GET and GET/{name}**
+
+<p class="fragment fade-up">
+end tag: ```step04```
+</p>
+
+
+## Validation
+## Plugins
+
+start tag: ```step05```
+
+**Exercise: Extract + refactor validations**
+
+<p class="fragment fade-up">
+end tag: ```step06```
+</p>
+
+Note:
+* setup: create empty validations.js and import \*
+* speak about importing using validation objects inside validate config block (don't move entire validate block)
+
+
+<!-- .slide: id="prerequisites" -->
+## Prerequisites: Tools
+
+* [git](https://git-scm.com/)
+* [node](https://nodejs.org/en/download/) v5 or v6
+  * [nvm](https://github.com/creationix/nvm) is better!
+* [npm](https://www.npmjs.com/) (included in node)
+
+
+## Prerequisites: editor
+
+* [atom](https://atom.io/) _used by me_
+  * [linter-js-standard](https://atom.io/packages/linter-js-standard)
+  * [ternjs](https://atom.io/packages/atom-ternjs)
+* [sublime v3](https://www.sublimetext.com/3)
+  * [sublimelinter-contrib-standard](https://github.com/Flet/SublimeLinter-contrib-standard) _see also [standardjs](http://standardjs.com/index.html#text-editor-plugins)_
+  * [ternjs](https://github.com/ternjs/tern_for_sublime)
+* [visualstudio code](https://code.visualstudio.com/)
+  * [vscode-standard](https://github.com/shinnn/vscode-standard)
+
+_note: best experience with one of the above (no intellij)_
 
 
 
 ![pouchdb logo](images/pouchdb.png)
 
-[pouchdb.com](pouchdb.com)
+# [pouchdb.com](http://pouchdb.com)
+
 
 * open source javascript db
 * browser **and** node.js
@@ -222,14 +310,46 @@ Use them!
 
 
 
-# Out of Scope
-### _see also_
+# Live Coding part 2
 
-* cache (also with server.method: interesting with user or user token)
+
+## Models
+
+start tag: ```step07```
+
+**Exercise: Use model in getByName + post**
+
+<p class="fragment fade-up">
+end tag: ```step08```
+</p>
+
+
+## Error Handling
+## Code reuse
+## Pre handlers
+
+start tag: ```step09```
+
+**Exercise: Use model in getByName + post**
+
+<p class="fragment fade-up">
+end tag: ```step10```
+</p>
+
+
+
+# Out of Scope
+
+
+## _see also_
+
+* cache
+  * with server.method! get user? or get user token?
 * templates & views
 * request lifecycle
 * generic error handler / failActions
-* testing (inject)
+* testing
+  * ```inject```
 
 
 
@@ -244,59 +364,6 @@ Use them!
 ### pouchdb
 
 * https://youtu.be/7L7esHWAjSU
-
-
-
-# Exercises
-
-see [prerequisites](#/prerequisites)
-
-
-### hello world
-
-Note:
-write together
-
-
-### after add 'in-memory' db to POST, add to other handlers
-
-
-### after extracting plugin config and handlers, extract/refactor validations
-
-* setup: create empty validations.js and import \*
-* speak about importing using validation objects inside validate config block (don't move entire validate block)
-
-
-### create plugin for models
-
-
-### after using models in getAll, use models in other handlers
-
-
-### after adding first 'pre' handler, refactor remaining handlers (hint: given stubs, use an array of orgs)
-
-
-<!-- .slide: id="prerequisites" -->
-## Prerequisites: Tools
-
-* [git](https://git-scm.com/)
-* [node](https://nodejs.org/en/download/) v5 or v6
-  * [nvm](https://github.com/creationix/nvm) is better!
-* [npm](https://www.npmjs.com/) (included in node)
-
-
-## Prerequisites: editor
-
-* [atom](https://atom.io/) _used by me_
-  * [linter-js-standard](https://atom.io/packages/linter-js-standard)
-  * [ternjs](https://atom.io/packages/atom-ternjs)
-* [sublime v3](https://www.sublimetext.com/3)
-  * [sublimelinter-contrib-standard](https://github.com/Flet/SublimeLinter-contrib-standard) _see also [standardjs](http://standardjs.com/index.html#text-editor-plugins)_
-  * [ternjs](https://github.com/ternjs/tern_for_sublime)
-* [visualstudio code](https://code.visualstudio.com/)
-  * [vscode-standard](https://github.com/shinnn/vscode-standard)
-
-_note: best experience with one of the above (no intellij)_
 
 
 
