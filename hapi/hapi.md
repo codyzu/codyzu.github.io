@@ -29,7 +29,7 @@ Axway Engage
 _25 May 2016_
 
 
-## middlewares & routes
+# middlewares & routes
 
 * middlewares === chain of functions <!-- .element: class="fragment fade-in" -->
 * routes matched by regex <!-- .element: class="fragment fade-in" -->
@@ -101,18 +101,6 @@ _25 May 2016_
 * caching built-in <!-- .element: class="fragment fade-up" -->
 
 
-<!-- .slide: data-background-image="images/hapi-wishlist.png" data-background-size="contain" -->
-
-Note:
-_from [https://youtu.be/Recv7vR8ZlA?t=15m19s](https://youtu.be/Recv7vR8ZlA?t=15m19s)_
-
-
-<!-- .slide: data-background-image="images/hapi-config-over-code.png" data-background-size="contain" -->
-
-Note:
-_from [https://youtu.be/Recv7vR8ZlA?t=15m19s](https://youtu.be/Recv7vR8ZlA?t=15m19s)_
-
-
 ## Principle: config over code
 
 * everything possible in code, _but as much as possible with config!_
@@ -143,7 +131,7 @@ Note:
 
 # BIG framework?
 
-### express is small (few hundred lines of code)
+### express is small (few hundred lines of code)...
 ### hapi is big?
 
 features start in core -> moved to plugin if not 'core' feature
@@ -154,7 +142,7 @@ if feature adds value, stays integrated in framework, else move to plugin
 
 Note:
 
-normally in node.js we say "no big frameworks!"
+node.js, we say "no big frameworks!"
 the result is a highly functional, integrated framework
 
 
@@ -235,25 +223,23 @@ git tag: ```step02```
 ## post
 
 
-## getOne
-## getAll
+## getOne + getAll
 (in memory)
 
 start tag: ```step03```
 
-**Exercise: Write GET and GET/{name}**
+**EXERCISE:** write GET and GET/{name}
 
 <p class="fragment fade-up">
 end tag: ```step04```
 </p>
 
 
-## Validation
-## Plugins
+## Validation + Plugins
 
 start tag: ```step05```
 
-**Exercise: Extract + refactor validations**
+**EXERCISE** extract + refactor validations
 
 <p class="fragment fade-up">
 end tag: ```step06```
@@ -293,41 +279,59 @@ _note: best experience with one of the above (no intellij)_
 # [pouchdb.com](http://pouchdb.com)
 
 
-* open source javascript db
-* browser **and** node.js
-* "offline first" (mobile: offline should _not_ be an error)
-* db for npm
-* works with couchdb protocol
+# What is it?
+
+* open source javascript db <!-- .element: class="fragment fade-up" -->
+* <!-- .element: class="fragment fade-up" --> browser **and** node.js
+* works with couchdb protocol <!-- .element: class="fragment fade-up" -->
+* db for npm <!-- .element: class="fragment fade-up" -->
 
 
-## backends
+# Offline first
+
+> because being offline offline shouldn't be an error condition
+
+_- Bradley Holt, IBM Cloudant_
+
+Note:
+
+* if we are nearly always connected do we need offline capability?
+* maybe it's more important?
+  * because users have the expectation that the app works all of the time
+
+
+# backends
 
 * couchdb
 * cloud
 * leveldb/leveldown (in-memory, sqlite, sql)
 
 
-## documents
+# documents
 * json
-* \_id
+* \_id (indexed field)
 * \_rev (optimistic concurrency)
 
-```
+
+```json
 {
-  "_id": "dfasf",
-  "_rev": "dfsfaf",
-  "name": "my name",
-  "description": "description"
+  "_id": "Organization/Axway/Contact/codyzu",
+  "_rev": "1-bea5fa18e06522d12026f4aee6b15ee4",
+  "title": "Software Engineer",
+  "site": "Annecy"
 }
 ```
 
 
-## indexes
+# indexes: use them!
 
-Use them!
-
-* https://pouchdb.com/2014/06/17/12-pro-tips-for-better-code-with-pouchdb.html
-* https://pouchdb.com/2014/05/01/secondary-indexes-have-landed-in-pouchdb.html
+* Date.toJSON() to sort sequentially <!-- .element: class="fragment fade-up" -->
+* <!-- .element: class="fragment fade-up" --> ```Organization/Axway/Contact/codyzu```
+* <!-- .element: class="fragment fade-up" --> combine with ```startKey```, ```endKey```, ```descending```
+* secondary indexes are possible, typically the primary will be enough <!-- .element: class="fragment fade-up" -->
+* <!-- .element: class="fragment fade-up" --> [12-pro-tips-for-better-code-with-pouchdb](https://pouchdb.com/2014/06/17/12-pro-tips-for-better-code-with-pouchdb.html)
+* <!-- .element: class="fragment fade-up" --> [secondary-indexes-have-landed-in-pouchdb](https://pouchdb.com/2014/05/01/secondary-indexes-have-landed-in-pouchdb.html)
+* <!-- .element: class="fragment fade-up" --> [pouchdb-find plugin](https://github.com/nolanlawson/pouchdb-find) (mongo style queries)
 
 
 
@@ -338,7 +342,7 @@ Use them!
 
 start tag: ```step07```
 
-**Exercise: Use model in getByName + post**
+**EXERCISE:** use model in getByName + post
 
 <p class="fragment fade-up">
 end tag: ```step08```
@@ -351,7 +355,7 @@ end tag: ```step08```
 
 start tag: ```step09```
 
-**Exercise: Use model in getByName + post**
+**EXERCISE:** refactor all handlers using pre handlers
 
 <p class="fragment fade-up">
 end tag: ```step10```
@@ -362,15 +366,19 @@ end tag: ```step10```
 # Out of Scope
 
 
-## _see also_
+## _see also..._
 
-* cache
-  * with server.method! get user? or get user token?
-* templates & views
-* request lifecycle
-* generic error handler / failActions
-* testing
-  * ```inject```
+* cache <!-- .element: class="fragment fade-up" -->
+* templates & views <!-- .element: class="fragment fade-up" -->
+* request lifecycle (extension points) <!-- .element: class="fragment fade-up" -->
+* generic error handler / failActions <!-- .element: class="fragment fade-up" -->
+* <!-- .element: class="fragment fade-up" -->testing: ```inject```
+
+Note:
+
+* cache: combine with server.method
+  * get user, get user token (something done for every request, can be cached)
+* templates & views: no presentation layer, but support for templating
 
 
 
