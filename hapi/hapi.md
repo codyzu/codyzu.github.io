@@ -12,7 +12,7 @@ Axway Engage
 * Member [hoodie](http://hood.ie) project (server using hapi + pouchdb)
 * express.js REST apis for **Axway Engage**
 * New keystore microservice using hapi for **Axway Engage**
-* Passionate for everything node.js!
+* Passion for everything node.js!
 
 
 
@@ -48,7 +48,7 @@ Note:
 
 ![express-middlewares](images/express-middleware.png)
 
-_from [https://youtu.be/Recv7vR8ZlA](https://youtu.be/Recv7vR8ZlA)_
+_- [Eran Hammer of WalMart Labs presents hapi (YouTube)](https://youtu.be/Recv7vR8ZlA?list=PLB7q09icyCHVp3YLoYigTK5JisixHEBf6)_
 
 
 
@@ -94,9 +94,9 @@ _25 May 2016_
   * no middlewares
   * everything plugins (+ some events)
 * plugins: <!-- .element: class="fragment fade-up" -->
-* code isolation -> better for big teams
+  * code isolation -> better for big teams
   * inter-plugin dependencies
-* configuration over ???: <!-- .element: class="fragment fade-up" -->
+* configuration over code: <!-- .element: class="fragment fade-up" -->
   * easier to validate
 * caching built-in <!-- .element: class="fragment fade-up" -->
 
@@ -325,9 +325,9 @@ end tag: ```step08```
 </p>
 
 
-## Error Handling
-## Code reuse
-## Pre handlers
+* ## Error Handling
+* ## Code reuse
+* ## Pre handlers
 
 start tag: ```step09```
 
@@ -354,17 +354,22 @@ end tag: ```step10```
 
 
 
-# links
-### hapi
-
-* https://youtu.be/B3u0XkbhleA?list=PLB7q09icyCHVp3YLoYigTK5JisixHEBf6
-* https://youtu.be/Recv7vR8ZlA?list=PLB7q09icyCHVp3YLoYigTK5JisixHEBf6
-* https://youtu.be/ybX2s_sFdnk?list=PLB7q09icyCHVp3YLoYigTK5JisixHEBf6
+# Links
 
 
-### pouchdb
+## hapi
 
-* https://youtu.be/7L7esHWAjSU
+* [Eran Hammer of WalMart Labs presents hapi (YouTube)](https://youtu.be/Recv7vR8ZlA?list=PLB7q09icyCHVp3YLoYigTK5JisixHEBf6)
+* [Eran Hammer on Hapi 2.0 (YouTube)](https://youtu.be/B3u0XkbhleA?list=PLB7q09icyCHVp3YLoYigTK5JisixHEBf6)
+* [Building Web Apps and Services with Hapi js (YouTube)](https://youtu.be/ybX2s_sFdnk?list=PLB7q09icyCHVp3YLoYigTK5JisixHEBf6)
+
+
+[![Developing a hapi Edge: A rich Node.js framework for apps and services](images/developing-a-hapi-edge.jpg)](https://www.amazon.com/Developing-hapi-Edge-framework-services/dp/1939902207)
+
+
+## pouchdb
+
+* [Offline-First Apps with PouchDB (YouTube)](https://youtu.be/7L7esHWAjSU)
 
 
 
