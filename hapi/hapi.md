@@ -97,7 +97,7 @@ _25 May 2016_
   * code isolation -> better for big teams
   * inter-plugin dependencies
 * configuration over code: <!-- .element: class="fragment fade-up" -->
-  * easier to validate
+  * do as much as possible with config!
 * caching built-in <!-- .element: class="fragment fade-up" -->
 
 
@@ -113,16 +113,32 @@ Note:
 _from [https://youtu.be/Recv7vR8ZlA?t=15m19s](https://youtu.be/Recv7vR8ZlA?t=15m19s)_
 
 
-## Principles
+## Principle: config over code
 
-* config over code
-  * can write code, but can _also_ do as much as possible with config
-  * input/output validation (schema)
+* everything possible in code, _but as much as possible with config!_
+* input/output validation (schema)
+* reflection (create documentation, generate stubs)
+* can validate config (bad keys, bad values) -> reduces errors
+* more reusable (easier to copy config vs code)
+
+Note:
+
+* stubs for java/objective-C, i.e. for android devs don't have update all of there java class for serialization
 
 
-## validation
+## Features
 
-* in node difficult to have conditional validation (if quary param then no body, etc) with callbacks
+<ul>
+  <li class="fragment fade-up">
+    <h3>validation</h3>
+    <ul>
+      <li>difficult to have conditional validation (if quary param then no body, etc)</li>
+      <li>especially in node with if asynchronous</li>
+    </ul>
+  </li>
+  <li class="fragment fade-up"><h3>utilities (static files, dirs, proxies)</h3>
+  <li class="fragment fade-up"><h3>views (basic template support)</h3>
+</ul>
 
 
 # BIG framework?
@@ -133,9 +149,13 @@ _from [https://youtu.be/Recv7vR8ZlA?t=15m19s](https://youtu.be/Recv7vR8ZlA?t=15m
 features start in core -> moved to plugin if not 'core' feature
 <!-- .element: class="fragment fade-in" -->
 
+if feature adds value, stays integrated in framework, else move to plugin
+<!-- .element: class="fragment fade-in" -->
+
 Note:
 
 normally in node.js we say "no big frameworks!"
+the result is a highly functional, integrated framework
 
 
 # 100% coverage
