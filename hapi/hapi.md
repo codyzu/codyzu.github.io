@@ -396,6 +396,7 @@ Note:
 
 * cache: combine with server.method
   * get user, get user token (something done for every request, can be cached)
+  * expires in, stale after
 * templates & views: no presentation layer, but support for templating
 
 
