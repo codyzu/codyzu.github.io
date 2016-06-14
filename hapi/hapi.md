@@ -102,6 +102,10 @@ _25 May 2016_
   * do as much as possible with config!
 * caching built-in <!-- .element: class="fragment fade-up" -->
 
+Note:
+
+* big teams / code isolation: not as important for microservices, but still interesting
+
 
 ## Principle: config over code
 
@@ -118,7 +122,8 @@ Note:
 
 
 ### try to keep keep minimum interactions with framework
-### config -> framework; code -> business logic
+### write config -> framework
+### write code -> business logic
 
 
 ## Features
@@ -141,7 +146,7 @@ Note:
 ### express is small (few hundred lines of code)...
 ### hapi is big?
 
-features start in core -> moved to plugin if not 'core' feature
+features start in core
 <!-- .element: class="fragment fade-in" -->
 
 if feature adds value, stays integrated in framework, else move to plugin
@@ -149,8 +154,8 @@ if feature adds value, stays integrated in framework, else move to plugin
 
 Note:
 
-node.js, we say "no big frameworks!"
-the result is a highly functional, integrated framework
+* node.js, we say "no big frameworks!"
+* the result is a highly functional, integrated framework
 
 
 # 100% coverage
@@ -337,13 +342,13 @@ Note:
 
 # indexes: use them!
 
-* Date.toJSON() to sort sequentially <!-- .element: class="fragment fade-up" -->
-* <!-- .element: class="fragment fade-up" --> ```Organization/Axway/Contact/codyzu```
-* <!-- .element: class="fragment fade-up" --> combine with ```startKey```, ```endKey```, ```descending```
-* secondary indexes are possible, typically the primary will be enough <!-- .element: class="fragment fade-up" -->
-* <!-- .element: class="fragment fade-up" --> [12-pro-tips-for-better-code-with-pouchdb](https://pouchdb.com/2014/06/17/12-pro-tips-for-better-code-with-pouchdb.html)
-* <!-- .element: class="fragment fade-up" --> [secondary-indexes-have-landed-in-pouchdb](https://pouchdb.com/2014/05/01/secondary-indexes-have-landed-in-pouchdb.html)
-* <!-- .element: class="fragment fade-up" --> [pouchdb-find plugin](https://github.com/nolanlawson/pouchdb-find) (mongo style queries)
+* `Date.toJSON()` to sort sequentially <!-- .element: class="fragment fade-up" data-fragment-index="1" -->
+* <!-- .element: class="fragment fade-up"  data-fragment-index="2"--> ```Organization/Axway/Contact/codyzu```
+* <!-- .element: class="fragment fade-up"  data-fragment-index="3"--> combine with ```startKey```, ```endKey```, ```descending```
+* secondary indexes are possible, typically the primary will be enough <!-- .element: class="fragment fade-up" data-fragment-index="4" -->
+* <!-- .element: class="fragment fade-up" data-fragment-index="5" --> [12-pro-tips-for-better-code-with-pouchdb](https://pouchdb.com/2014/06/17/12-pro-tips-for-better-code-with-pouchdb.html)
+* <!-- .element: class="fragment fade-up" data-fragment-index="5" --> [secondary-indexes-have-landed-in-pouchdb](https://pouchdb.com/2014/05/01/secondary-indexes-have-landed-in-pouchdb.html)
+* <!-- .element: class="fragment fade-up" data-fragment-index="5" --> [pouchdb-find plugin](https://github.com/nolanlawson/pouchdb-find) (mongo style queries)
 
 
 
