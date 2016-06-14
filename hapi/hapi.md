@@ -64,6 +64,7 @@ _- [Eran Hammer of WalMart Labs presents hapi (YouTube)](https://youtu.be/Recv7v
 # Why???
 
 
+<!-- .slide: data-background-image="images/hapi.png" data-background-size="100px" data-background-repeat="round" -->
 <iframe data-autoplay class="stretch" width="853" height="480" src="https://www.youtube.com/embed/y6Sxv-sUYtM?rel=0&amp;showinfo=0&start=132&end=162" frameborder="0" allowfullscreen></iframe>
 
 
