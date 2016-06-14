@@ -1,10 +1,14 @@
 # HAPIer REST APIs
 
-###Cody Zuschlag
+### Cody Zuschlag
 
 Senior Software Engineer
 
 Axway Engage
+
+Note:
+"n'importe quelle moment..."
+"dans 15 minutes"
 
 
 ![hoodie](images/hoodie.png)
@@ -13,6 +17,9 @@ Axway Engage
 * express.js REST apis for **Axway Engage**
 * New keystore microservice using hapi for **Axway Engage**
 * Passion for everything node.js!
+
+Note:
+"resoudre" -> resolve
 
 
 
@@ -24,6 +31,7 @@ Axway Engage
 
 Note:
 * exists since 2012
+* sur internet
 
 
 # amazing!
@@ -42,7 +50,7 @@ Note:
 
 * **order matters!**
 * body-parser _must be before_ cookie parser (or passport): undocumented dependencies (and order) between middlewares!
-* rep / res are **wrapped native node objects**
+* req / res are **wrapped native node objects**
 * dirty, changes to node ~> broken?
 * mixes http and business logic (hard to decouple)
   * "no clean seperation between business logic and framework"
@@ -89,6 +97,7 @@ _25 May 2016_
 
 Note:
 * Walmart: world's largest company by revenue (Fortune Global 500 list in 2014)
+  * chiffre d'affaire
 * Walmart: biggest private employer in the world (2.2 million employees)
 
 
@@ -241,6 +250,7 @@ server.start((err) => {
 
 Note:
 
+* objective: get swagger running ASAP
 * routes: most specific path always wins (i.e. with wildcards)
 * server wont start if there is a conflict (2 matching paths with same specifity)
 
@@ -307,7 +317,7 @@ _note: best experience with one of the above (no intellij)_
 
 # Offline first
 
-> because being offline offline shouldn't be an error condition
+> because being offline shouldn't be an error condition
 
 _- Bradley Holt, IBM Cloudant_
 
