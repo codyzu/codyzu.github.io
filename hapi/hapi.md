@@ -173,15 +173,12 @@ _see [prerequisites](#/prerequisites)_
 
 ## Setup + Install
 
-```bash
+```
 git clone https://github.com/codyzu/hapi-demo.git
 cd hapi-demo
-git checkout step00
 ```
 
-<p class="fragment fade-up">
-end tag: ```step00```
-</p>
+><!-- .element: class="fragment fade-up" data-fragment-index="1" --> ```git checkout --force dojo00```<!-- .element: class="fragment fade-up" data-fragment-index="1" -->
 
 ```bash
 npm install
@@ -194,12 +191,12 @@ npm install
 ```javascript
 import hapi from 'hapi'
 ```
-<!-- .element: class="fragment fade-up" -->
+<!-- .element: class="fragment fade-up" data-fragment-index="1" -->
 ```javascript
 const server = new hapi.Server()
 server.connection({port: 3000})
 ```
-<!-- .element: class="fragment fade-up" -->
+<!-- .element: class="fragment fade-up" data-fragment-index="2" -->
 ```javascript
 server.route({
   method: 'GET',
@@ -209,7 +206,7 @@ server.route({
   }
 })
 ```
-<!-- .element: class="fragment fade-up" -->
+<!-- .element: class="fragment fade-up" data-fragment-index="3" -->
 ```javascript
 server.start((err) => {
   if (err) {
@@ -219,20 +216,18 @@ server.start((err) => {
   console.log(`Server running at: ${server.info.uri}`)
 })
 ```
-<!-- .element: class="fragment fade-up" -->
+<!-- .element: class="fragment fade-up" data-fragment-index="4" -->
 
-<p class="fragment fade-up">
-git tag: ```step01```
-</p>
+><!-- .element: class="fragment fade-up" data-fragment-index="5" --> ```git checkout --force dojo01```<!-- .element: class="fragment fade-up" data-fragment-index="5" -->
 
 
 ## getByName
 
-git tag: ```step02```
+><!-- .element: class="fragment fade-up" data-fragment-index="1" --> ```git checkout --force dojo02```<!-- .element: class="fragment fade-up" data-fragment-index="1" -->
 
-## config + swagger
+## config + swagger <!-- .element: class="fragment fade-up" data-fragment-index="2" -->
 
-## post
+## post <!-- .element: class="fragment fade-up" data-fragment-index="3" -->
 
 Note:
 
@@ -243,24 +238,20 @@ Note:
 ## getOne + getAll
 (in memory)
 
-start tag: ```step03```
+> ```git checkout --force dojo03```
 
-**EXERCISE:** write GET and GET/{name}
+**EXERCISE:** write `GET/{name}` and `GET`
 
-<p class="fragment fade-up">
-end tag: ```step04```
-</p>
+><!-- .element: class="fragment fade-up highlight-blue" data-fragment-index="1" --> ```git checkout --force dojo04```<!-- .element: class="fragment fade-up" data-fragment-index="1" -->
 
 
 ## Validation + Plugins
 
-start tag: ```step05```
+> ```git checkout --force dojo05```
 
-**EXERCISE** extract + refactor validations
+**EXERCISE:** extract + refactor validations
 
-<p class="fragment fade-up">
-end tag: ```step06```
-</p>
+><!-- .element: class="fragment fade-up highlight-blue" data-fragment-index="1" --> ```git checkout --force dojo06```<!-- .element: class="fragment fade-up" data-fragment-index="1" -->
 
 Note:
 * setup: create empty validations.js and import \*
@@ -357,30 +348,35 @@ Note:
 
 ## Models
 
-start tag: ```step07```
+> ```git checkout --force dojo07```
 
-**EXERCISE:** use model in getByName + post
+**EXERCISE:** use model in `getByName` + `post`
 
-<p class="fragment fade-up">
-end tag: ```step08```
-</p>
+><!-- .element: class="fragment fade-up highlight-blue" data-fragment-index="1" --> ```git checkout --force dojo08```<!-- .element: class="fragment fade-up" data-fragment-index="1" -->
 
 
 * ## Error Handling
 * ## Code reuse
 * ## Pre handlers
 
-start tag: ```step09```
+> ```git checkout --force dojo09```
 
 **EXERCISE:** refactor all handlers using pre handlers
 
-<p class="fragment fade-up">
-end tag: ```step10```
-</p>
+><!-- .element: class="fragment fade-up highlight-blue"  data-fragment-index="1" --> ```git checkout --force dojo10```<!-- .element: class="fragment fade-up" data-fragment-index="1" -->
 
 Note:
 
 * pre handlers -> allow breaking business into maintainable, reusable pieces
+
+
+# Bug???
+
+## Hint: POST <!-- .element: class="fragment fade-up" data-fragment-index="1" -->
+
+## returns code 200, expecting code 201 <!-- .element: class="fragment fade-up" data-fragment-index="2" -->
+
+><!-- .element: class="fragment fade-up highlight-blue" data-fragment-index="3" --> ```git checkout --force dojo99```<!-- .element: class="fragment fade-up" data-fragment-index="3" -->
 
 
 
