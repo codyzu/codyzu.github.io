@@ -79,6 +79,8 @@ _25 May 2016_
 * mobile site (single point, proxy)
   * node.js: "heavy on network, light on processing... streaming"
 * originally built on express.js
+* today: powers all mobile APIs at Walmart
+* soon: powering all e-commerce at Walmart
 
 
 # why
@@ -103,15 +105,20 @@ _25 May 2016_
 
 ## Principle: config over code
 
-* everything possible in code, _but as much as possible with config!_
-* input/output validation (schema)
-* reflection (create documentation, generate stubs)
-* can validate config (bad keys, bad values) -> reduces errors
-* more reusable (easier to copy config vs code)
+* <!-- .element: class="fragment fade-up" data-fragment-index="1" --> everything possible in code...
+* <!-- .element: class="fragment fade-up" data-fragment-index="2" --> _as much as possible with config!_
+* <!-- .element: class="fragment fade-up" data-fragment-index="3" --> input/output validation (schema)
+* <!-- .element: class="fragment fade-up" data-fragment-index="3" --> reflection (create documentation, generate stubs)
+* <!-- .element: class="fragment fade-up" data-fragment-index="3" --> can validate config (bad keys, bad values) -> reduces errors
+* <!-- .element: class="fragment fade-up" data-fragment-index="3" --> more reusable (easier to copy config vs code)
 
 Note:
 
 * stubs for java/objective-C, i.e. for android devs don't have update all of there java class for serialization
+
+
+### try to keep keep minimum interactions with framework
+### config -> framework; code -> business logic
 
 
 ## Features
@@ -221,6 +228,11 @@ git tag: ```step02```
 ## config + swagger
 
 ## post
+
+Note:
+
+* routes: most specific path always wins (i.e. with wildcards)
+* server wont start if there is a conflict (2 matching paths with same specifity)
 
 
 ## getOne + getAll
@@ -360,6 +372,10 @@ start tag: ```step09```
 <p class="fragment fade-up">
 end tag: ```step10```
 </p>
+
+Note:
+
+* pre handlers -> allow breaking business into maintainable, reusable pieces
 
 
 
