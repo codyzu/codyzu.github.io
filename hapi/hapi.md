@@ -1,4 +1,4 @@
-# REST api with hapi
+# HAPIer REST APIs
 
 ###Cody Zuschlag
 
@@ -22,6 +22,9 @@ Axway Engage
 
 # [expressjs.com](http://expressjs.com)
 
+Note:
+* exists since 2012
+
 
 # amazing!
 ![express npm stats](images/express-npm-stats.png)
@@ -32,18 +35,19 @@ _25 May 2016_
 # middlewares & routes
 
 * middlewares === chain of functions <!-- .element: class="fragment fade-in" -->
+* req / res <!-- .element: class="fragment fade-in" -->
 * routes matched by regex <!-- .element: class="fragment fade-in" -->
-* req / res -> wrapped native node objects with added fields <!-- .element: class="fragment fade-in" -->
 
 Note:
 
 * **order matters!**
 * body-parser _must be before_ cookie parser (or passport): undocumented dependencies (and order) between middlewares!
-* ~~parser reads body objects into memory before parsing _no limit on size_ (out of memory!)~~ Not true with express 4
-* node by default uses streams for http connection, express makes it difficult to not parse *all the time*
+* rep / res are **wrapped native node objects**
 * dirty, changes to node ~> broken?
 * mixes http and business logic (hard to decouple)
   * "no clean seperation between business logic and framework"
+* ~~parser reads body objects into memory before parsing _no limit on size_ (out of memory!)~~ Not true with express 4
+* ~~node by default uses streams for http connection, express makes it difficult to not parse *all the time*~~
 
 
 ![express-middlewares](images/express-middleware.png)
@@ -76,12 +80,16 @@ _25 May 2016_
 
 # history
 
-* born in yahoo -> walmart
-* mobile site (single point, proxy)
+* born in yahoo -> walmart <!-- .element: class="fragment fade-up" -->
+* mobile site (single point, proxy) <!-- .element: class="fragment fade-up" -->
   * node.js: "heavy on network, light on processing... streaming"
-* originally built on express.js
-* today: powers all mobile APIs at Walmart
-* soon: powering all e-commerce at Walmart
+* originally built on express.js <!-- .element: class="fragment fade-up" -->
+* today: powers all mobile APIs at Walmart <!-- .element: class="fragment fade-up" -->
+* soon: powering all e-commerce at Walmart <!-- .element: class="fragment fade-up" -->
+
+Note:
+* Walmart: world's largest company by revenue (Fortune Global 500 list in 2014)
+* Walmart: biggest private employer in the world (2.2 million employees)
 
 
 # why
@@ -122,7 +130,7 @@ Note:
 * stubs for java/objective-C, i.e. for android devs don't have update all of there java class for serialization
 
 
-### try to keep keep minimum interactions with framework
+### try to keep minimum interactions with framework
 ### write config -> framework
 ### write code -> business logic
 
@@ -334,7 +342,7 @@ Note:
 
 # indexes: use them!
 
-* `Date.toJSON()` to sort sequentially <!-- .element: class="fragment fade-up" data-fragment-index="1" -->
+* <!-- .element: class="fragment fade-up" data-fragment-index="1" --> `Date.toJSON()` to sort sequentially 
 * <!-- .element: class="fragment fade-up"  data-fragment-index="2"--> ```Organization/Axway/Contact/codyzu```
 * <!-- .element: class="fragment fade-up"  data-fragment-index="3"--> combine with ```startKey```, ```endKey```, ```descending```
 * secondary indexes are possible, typically the primary will be enough <!-- .element: class="fragment fade-up" data-fragment-index="4" -->
