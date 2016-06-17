@@ -185,7 +185,7 @@ _- Eran Hammer_
 
 
 
-# Live Coding part 1
+# Code
 
 _see [prerequisites](#/prerequisites)_
 
@@ -195,14 +195,9 @@ _see [prerequisites](#/prerequisites)_
 ```
 git clone https://github.com/codyzu/hapi-demo.git
 cd hapi-demo
-```
-
-><!-- .element: class="fragment fade-up" data-fragment-index="1" --> ```git checkout --force dojo00```<!-- .element: class="fragment fade-up" data-fragment-index="1" -->
-
-```bash
+git checkout dojo
 npm install
 ```
-<!-- .element: class="fragment fade-up" -->
 
 
 ## Hello world
@@ -237,45 +232,264 @@ server.start((err) => {
 ```
 <!-- .element: class="fragment fade-up" data-fragment-index="4" -->
 
-><!-- .element: class="fragment fade-up" data-fragment-index="5" --> ```git checkout --force dojo01```<!-- .element: class="fragment fade-up" data-fragment-index="5" -->
+
+## config
+
+```javascript
+{
+  // hapi server options
+  server: {},
+
+  // hapi connections
+  connections: [ {
+    port: 3000
+  } ],
+
+  // hapi plugin registrations
+  registrations: []
+}
+```
+
+
+```javascript
+import config from './config'
+import glue from 'glue'
+
+glue.compose(config, {relativeTo: __dirname}, (err, server) => {
+  if (err) {
+    throw err
+  }
+
+  server.start((err) => {
+    if (err) {
+      throw err
+    }
+```
+```javascript
+    server.route({
+      method: 'GET',
+      path: '/',
+      config: {tags: ['api']},
+      handler: (request, reply) => {
+        reply('Hello world!')
+      }
+    })
+```
+```javascript
+    console.log(`Server running at: ${server.info.uri}`)
+  })
+})
+```
 
 
 ## getByName
 
-><!-- .element: class="fragment fade-up" data-fragment-index="1" --> ```git checkout --force dojo02```<!-- .element: class="fragment fade-up" data-fragment-index="1" -->
+```javascript
+server.route({
+```
+<!-- .element: class="fragment fade-up" data-fragment-index="1" -->
 
-## config + swagger <!-- .element: class="fragment fade-up" data-fragment-index="2" -->
+```javascript
+  method: 'GET',
+  path: '/orgs/{name}',
+```
+<!-- .element: class="fragment fade-up" data-fragment-index="2" -->
 
-## post <!-- .element: class="fragment fade-up" data-fragment-index="3" -->
+```javascript
+  handler: (request, reply) => {
+    console.log(`hello ${request.params.name}!`)
+    reply(`hello ${request.params.name}!`)
+  },
+```
+<!-- .element: class="fragment fade-up" data-fragment-index="3" -->
 
-Note:
-
-* objective: get swagger running ASAP
-* routes: most specific path always wins (i.e. with wildcards)
-* server wont start if there is a conflict (2 matching paths with same specifity)
-
-
-## getOne + getAll
-(in memory)
-
-> ```git checkout --force dojo03```
-
-**EXERCISE:** write `GET/{name}` and `GET`
-
-><!-- .element: class="fragment fade-up highlight-blue" data-fragment-index="1" --> ```git checkout --force dojo04```<!-- .element: class="fragment fade-up" data-fragment-index="1" -->
+```javascript
+  config: {
+    validate: {
+      params: {
+        name: joi.string().max(10)
+      }
+    }
+  }
+})
+```
+<!-- .element: class="fragment fade-up" data-fragment-index="4" -->
 
 
-## Validation + Plugins
+## post
 
-> ```git checkout --force dojo05```
+```javascript
+server.route({
+  method: 'POST',
+  path: '/orgs',
+  handler: (request, reply) => {
+    console.log(`posting ${request.payload}`)
+    reply(request.payload).code(201)
+  },
+  config: {
+    tags: ['api'],
+    validate: {
+      payload: joi.object({
+        name: joi.string().max(10).required(),
+        email: joi.string().email().required()
+      }).unknown(),
+      options: {
+        stripUnknown: true
+      }
+    }
+  }
+})
+```
+<!-- .element: class="fragment fade-up" data-fragment-index="1" -->
 
-**EXERCISE:** extract + refactor validations
 
-><!-- .element: class="fragment fade-up highlight-blue" data-fragment-index="1" --> ```git checkout --force dojo06```<!-- .element: class="fragment fade-up" data-fragment-index="1" -->
+## getAll
 
-Note:
-* setup: create empty validations.js and import \*
-* speak about importing using validation objects inside validate config block (don't move entire validate block)
+```javascript
+server.route({
+  method: 'GET',
+  path: '/orgs',
+  handler: (request, reply) => {
+    const orgs = Object.values(db)
+    console.log('GET ALL:', orgs)
+    reply(orgs)
+  },
+  config: {
+    tags: ['api']
+  }
+})
+```
+<!-- .element: class="fragment fade-up" data-fragment-index="1" -->
+
+
+## Plugin
+
+```javascript
+import pack from '../package.json'
+import * as config from './config'
+
+export function register (server, options, next) {
+  // do plugin stuff
+
+  next()
+}
+
+register.attributes = {
+  name: 'orgs',
+  version: pack.version
+}
+```
+
+
+## Plugin 2
+
+```javascript
+export function register (server, options, next) {
+  server.route({
+    method: 'GET',
+    path: '/orgs',
+    config: config.getAll
+  })
+
+  server.route({
+    method: 'GET',
+    path: '/orgs/{name}',
+    config: config.getByName
+  })
+
+  server.route({
+    method: 'POST',
+    path: '/orgs',
+    config: config.post
+  })
+
+  next()
+}
+```
+
+
+## Plugin config
+
+```javascript
+import * as handlers from './handlers'
+import * as validations from './validations'
+
+export const getAll = {
+  tags: ['api'],
+  response: {
+    schema: validations.orgList
+  },
+  handler: handlers.getAllOrgs
+}
+
+export const getByName = {
+  tags: ['api'],
+  validate: {
+    params: {
+      name: validations.name
+    }
+  },
+  response: {
+    schema: validations.org
+  },
+  handler: handlers.getOrgByName
+}
+
+export const post = {
+  tags: ['api'],
+  validate: {
+    payload: validations.org,
+    options: {
+      stripUnknown: true
+    }
+  },
+  response: {
+    schema: validations.org
+  },
+  handler: handlers.postOrg
+}
+```
+
+
+## Plugin validations
+
+```javascript
+import joi from 'joi'
+
+export const name = joi.string().max(10).required().example('Axway').default('Axway')
+
+export const org = joi.object({
+  name,
+  email: joi.string().email().required().example('cody@email.com')
+}).unknown()
+
+export const orgList = joi.array().items(org).example([{name: 'Axway', email: 'cody@email.com'}])
+```
+
+
+## Plugin handlers
+
+```javascript
+const db = {}
+
+export function getAllOrgs (request, reply) {
+  const orgs = Object.values(db)
+  console.log('GET ALL:', orgs)
+  reply(orgs)
+}
+
+export function getOrgByName (request, reply) {
+  const org = db[request.params.name]
+  console.log('GET', request.params.name, org)
+  reply(org)
+}
+
+export function postOrg (request, reply) {
+  console.log('POST', request.payload)
+  db[request.payload.name] = request.payload
+  reply(request.payload).code(201)
+}
+```
 
 
 <!-- .slide: id="prerequisites" -->
