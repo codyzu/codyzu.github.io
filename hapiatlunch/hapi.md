@@ -254,55 +254,54 @@ server.start((err) => {
 ```javascript
 import config from './config'
 import glue from 'glue'
-
+```
+<!-- .element: class="fragment fade-right" data-fragment-index="1" -->
+```javascript
 glue.compose(config, {relativeTo: __dirname}, (err, server) => {
   if (err) {
     throw err
   }
-
+```
+<!-- .element: class="fragment fade-left" data-fragment-index="2" -->
+```javascript
   server.start((err) => {
     if (err) {
       throw err
     }
-```
-```javascript
+
     server.route({
-      method: 'GET',
-      path: '/',
-      config: {tags: ['api']},
-      handler: (request, reply) => {
-        reply('Hello world!')
-      }
+      method: 'GET'
+      // ...
     })
-```
-```javascript
+
     console.log(`Server running at: ${server.info.uri}`)
   })
+```
+<!-- .element: class="fragment fade-left" data-fragment-index="3" -->
+```javascript
 })
 ```
+<!-- .element: class="fragment fade-right" data-fragment-index="1" -->
 
 
-## getByName
+### getByName
 
 ```javascript
 server.route({
 ```
-<!-- .element: class="fragment fade-up" data-fragment-index="1" -->
-
+<!-- .element: class="fragment fade-right" data-fragment-index="1" -->
 ```javascript
   method: 'GET',
   path: '/orgs/{name}',
 ```
-<!-- .element: class="fragment fade-up" data-fragment-index="2" -->
-
+<!-- .element: class="fragment fade-left" data-fragment-index="2" -->
 ```javascript
   handler: (request, reply) => {
     console.log(`hello ${request.params.name}!`)
     reply(`hello ${request.params.name}!`)
   },
 ```
-<!-- .element: class="fragment fade-up" data-fragment-index="3" -->
-
+<!-- .element: class="fragment fade-left" data-fragment-index="3" -->
 ```javascript
   config: {
     validate: {
@@ -311,21 +310,33 @@ server.route({
       }
     }
   }
+```
+<!-- .element: class="fragment fade-left" data-fragment-index="4" -->
+```javascript
 })
 ```
-<!-- .element: class="fragment fade-up" data-fragment-index="4" -->
+<!-- .element: class="fragment fade-right" data-fragment-index="1" -->
 
 
-## post
+### post
 
 ```javascript
 server.route({
+```
+<!-- .element: class="fragment fade-right" data-fragment-index="1" -->
+```javascript
   method: 'POST',
   path: '/orgs',
+```
+<!-- .element: class="fragment fade-left" data-fragment-index="2" -->
+```javascript
   handler: (request, reply) => {
     console.log(`posting ${request.payload}`)
     reply(request.payload).code(201)
   },
+```
+<!-- .element: class="fragment fade-left" data-fragment-index="3" -->
+```javascript
   config: {
     tags: ['api'],
     validate: {
@@ -338,9 +349,12 @@ server.route({
       }
     }
   }
+```
+<!-- .element: class="fragment fade-left" data-fragment-index="4" -->
+```javascript
 })
 ```
-<!-- .element: class="fragment fade-up" data-fragment-index="1" -->
+<!-- .element: class="fragment fade-right" data-fragment-index="1" -->
 
 
 ## getAll
