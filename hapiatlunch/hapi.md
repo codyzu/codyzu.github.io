@@ -185,7 +185,9 @@ _- Eran Hammer_
 
 
 
-# Code
+# Code Example \#1
+
+### Hello world
 
 _see [prerequisites](#/prerequisites)_
 
@@ -237,6 +239,47 @@ server.start((err) => {
 <!-- .element: class="fragment fade-up" data-fragment-index="4" -->
 
 
+# Demo \#1
+
+### Hello World
+
+```bash
+git checkout --force demo01
+npm run srv
+```
+
+http://localhost:3000
+
+
+<!-- .slide: id="prerequisites" -->
+## Prerequisites: Tools
+
+* [git](https://git-scm.com/)
+* [node](https://nodejs.org/en/download/) v5 or v6
+  * [nvm](https://github.com/creationix/nvm) is better!
+* [npm](https://www.npmjs.com/) (included in node)
+
+
+## Prerequisites: editor
+
+* [atom](https://atom.io/) _used by me_
+  * [linter-js-standard](https://atom.io/packages/linter-js-standard)
+  * [ternjs](https://atom.io/packages/atom-ternjs)
+* [sublime v3](https://www.sublimetext.com/3)
+  * [sublimelinter-contrib-standard](https://github.com/Flet/SublimeLinter-contrib-standard) _see also [standardjs](http://standardjs.com/index.html#text-editor-plugins)_
+  * [ternjs](https://github.com/ternjs/tern_for_sublime)
+* [visualstudio code](https://code.visualstudio.com/)
+  * [vscode-standard](https://github.com/shinnn/vscode-standard)
+
+_note: best experience with one of the above (no intellij)_
+
+
+
+# Code Example \#2
+
+### Create / Read / List Organizations API
+
+
 # config
 
 
@@ -286,7 +329,7 @@ glue.compose(config, {relativeTo: __dirname}, (err, server) => {
     console.log(`Server running at: ${server.info.uri}`)
   })
 ```
-<!-- .element: class="fragment fade-in" data-fragment-index="3" -->
+<!-- .element: class="fragment fade-left" data-fragment-index="3" -->
 
 ```javascript
 })
@@ -301,17 +344,20 @@ glue.compose(config, {relativeTo: __dirname}, (err, server) => {
 server.route({
 ```
 <!-- .element: class="fragment fade-left" data-fragment-index="1" -->
+
 ```javascript
   method: 'GET',
   path: '/orgs/{name}',
 ```
 <!-- .element: class="fragment fade-left" data-fragment-index="2" -->
+
 ```javascript
   handler: (request, reply) => {
     reply(`hello ${request.params.name}!`)
   },
 ```
 <!-- .element: class="fragment fade-left" data-fragment-index="3" -->
+
 ```javascript
   config: {
     validate: {
@@ -319,6 +365,7 @@ server.route({
         name: joi.string().max(10)
       }
     }
+    // response: {} schema for reflection
   }
 ```
 <!-- .element: class="fragment fade-left" data-fragment-index="4" -->
@@ -335,20 +382,22 @@ server.route({
 server.route({
 ```
 <!-- .element: class="fragment fade-left" data-fragment-index="1" -->
+
 ```javascript
   method: 'POST',
   path: '/orgs',
 ```
 <!-- .element: class="fragment fade-left" data-fragment-index="2" -->
+
 ```javascript
   handler: (request, reply) => {
     reply(request.payload).code(201)
   },
 ```
 <!-- .element: class="fragment fade-left" data-fragment-index="3" -->
+
 ```javascript
   config: {
-    tags: ['api'],
     validate: {
       payload: joi.object({
         name: joi.string().max(10).required(),
@@ -358,9 +407,11 @@ server.route({
         stripUnknown: true
       }
     }
+    // response: {} schema for reflection
   }
 ```
 <!-- .element: class="fragment fade-left" data-fragment-index="4" -->
+
 ```javascript
 })
 ```
@@ -374,11 +425,13 @@ server.route({
 server.route({
 ```
 <!-- .element: class="fragment fade-left" data-fragment-index="1" -->
+
 ```javascript
   method: 'GET',
   path: '/orgs',
 ```
 <!-- .element: class="fragment fade-left" data-fragment-index="2" -->
+
 ```javascript
   handler: (request, reply) => {
     const orgs = Object.values(db)
@@ -387,19 +440,46 @@ server.route({
   },
 ```
 <!-- .element: class="fragment fade-left" data-fragment-index="3" -->
+
 ```javascript
   config: {
-    tags: ['api']
+    response: {
+      schema: joi.array().items(
+        joi.object({
+          name: joi.string().max(10).required(),
+          email: joi.string().email().required()
+        }).unknown())
+      .example([{name: 'Axway', email: 'cody@email.com'}])
+    }
   }
 ```
 <!-- .element: class="fragment fade-left" data-fragment-index="4" -->
+
 ```javascript
 })
 ```
 <!-- .element: class="fragment fade-right" data-fragment-index="1" -->
 
 
-# Plugin
+# Demo \#2
+
+```bash
+git checkout --force demo02
+npm run srv
+```
+
+http://localhost:3000/documentation
+
+_Note: swagger doc and UI_
+
+
+
+# Code Example \#3
+
+### Plugins
+
+
+# Plugin basics
 
 
 ```javascript
@@ -407,6 +487,7 @@ import pack from '../package.json'
 import * as config from './config'
 ```
 <!-- .element: class="fragment fade-left" data-fragment-index="1" -->
+
 ```javascript
 export function register (server, options, next) {
   // do plugin stuff
@@ -415,6 +496,7 @@ export function register (server, options, next) {
 }
 ```
 <!-- .element: class="fragment fade-left" data-fragment-index="2" -->
+
 ```javascript
 register.attributes = {
   name: 'orgs',
@@ -424,8 +506,10 @@ register.attributes = {
 <!-- .element: class="fragment fade-left" data-fragment-index="3" -->
 
 
-# Plugin 2
+# routes
 
+
+`orgs/index.js`
 
 ```javascript
 export function register (server, options, next) {
@@ -463,8 +547,10 @@ export function register (server, options, next) {
 <!-- .element: class="fragment fade-right" data-fragment-index="1" -->
 
 
-# Plugin config
+# config
 
+
+`orgs/config.js`
 
 ```javascript
 import * as handlers from './handlers'
@@ -482,6 +568,8 @@ export const getAll = {
 ```
 <!-- .element: class="fragment fade-left" -->
 
+
+`orgs/config.js`
 
 ```javascript
 import * as handlers from './handlers'
@@ -504,6 +592,8 @@ export const getByName = {
 ```
 <!-- .element: class="fragment fade-left" -->
 
+
+`orgs/config.js`
 
 ```javascript
 import * as handlers from './handlers'
@@ -528,8 +618,10 @@ export const post = {
 <!-- .element: class="fragment fade-left" -->
 
 
-# Plugin validations
+# validations
 
+
+`orgs/validations.js`
 
 ```javascript
 import joi from 'joi'
@@ -544,6 +636,8 @@ export const name = joi.string()
 ```
 <!-- .element: class="fragment fade-left" -->
 
+
+`orgs/validations.js`
 
 ```javascript
 import joi from 'joi'
@@ -563,6 +657,8 @@ export const org = joi.object({
 <!-- .element: class="fragment fade-left" -->
 
 
+`orgs/validations.js`
+
 ```javascript
 import joi from 'joi'
 
@@ -578,8 +674,10 @@ export const orgList = joi.array()
 <!-- .element: class="fragment fade-left" -->
 
 
-# Plugin handlers
+# handlers
 
+
+`orgs/handlers.js`
 
 ```javascript
 const db = {}
@@ -594,6 +692,8 @@ export function getAllOrgs (request, reply) {
 <!-- .element: class="fragment fade-left" -->
 
 
+`orgs/handlers.js`
+
 ```javascript
 const db = {}
 ```
@@ -606,6 +706,8 @@ export function getOrgByName (request, reply) {
 ```
 <!-- .element: class="fragment fade-left" -->
 
+
+`orgs/handlers.js`
 
 ```javascript
 const db = {}
@@ -620,27 +722,14 @@ export function postOrg (request, reply) {
 <!-- .element: class="fragment fade-left" -->
 
 
-<!-- .slide: id="prerequisites" -->
-## Prerequisites: Tools
+# Demo \#3
 
-* [git](https://git-scm.com/)
-* [node](https://nodejs.org/en/download/) v5 or v6
-  * [nvm](https://github.com/creationix/nvm) is better!
-* [npm](https://www.npmjs.com/) (included in node)
+```bash
+git checkout --force demo03
+npm run srv
+```
 
-
-## Prerequisites: editor
-
-* [atom](https://atom.io/) _used by me_
-  * [linter-js-standard](https://atom.io/packages/linter-js-standard)
-  * [ternjs](https://atom.io/packages/atom-ternjs)
-* [sublime v3](https://www.sublimetext.com/3)
-  * [sublimelinter-contrib-standard](https://github.com/Flet/SublimeLinter-contrib-standard) _see also [standardjs](http://standardjs.com/index.html#text-editor-plugins)_
-  * [ternjs](https://github.com/ternjs/tern_for_sublime)
-* [visualstudio code](https://code.visualstudio.com/)
-  * [vscode-standard](https://github.com/shinnn/vscode-standard)
-
-_note: best experience with one of the above (no intellij)_
+http://localhost:3000/documentation
 
 
 
