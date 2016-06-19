@@ -57,8 +57,8 @@ server.start((err) => {
 ### Hello World
 
 ```bash
-git checkout --force demo01
-npm run srv
+git checkout demo01
+npm start
 ```
 
 http://localhost:3000

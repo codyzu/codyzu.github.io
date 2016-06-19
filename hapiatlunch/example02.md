@@ -187,8 +187,8 @@ server.route({
 # Demo \#2
 
 ```bash
-git checkout --force demo02
-npm run srv
+git checkout demo02
+npm start
 ```
 
 http://localhost:3000/documentation

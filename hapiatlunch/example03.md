@@ -249,8 +249,8 @@ export function postOrg (request, reply) {
 # Demo \#3
 
 ```bash
-git checkout --force demo03
-npm run srv
+git checkout demo03
+npm start
 ```
 
 http://localhost:3000/documentation
