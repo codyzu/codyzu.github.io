@@ -234,20 +234,46 @@ server.start((err) => {
 <!-- .element: class="fragment fade-up" data-fragment-index="4" -->
 
 
+<pre><code data-trim data-noescape class="javascript" style="max-height: inherit">
+import hapi from 'hapi'
+
+<span class="fragment" data-fragment-index="1">const server = new hapi.Server()
+server.connection({port: 3000})</span>
+
+<span class="fragment" data-fragment-index="2">server.route({
+  method: 'GET',
+  path: '/',
+  handler: (request, reply) => {
+    reply('Hello world!')
+  }
+})</span>
+
+<span class="fragment" data-fragment-index="3">server.start((err) => {
+  if (err) {
+    throw err
+  }
+
+  console.log(`Server running at: ${server.info.uri}`)
+})</span>
+</code></pre>
+
+
 # config
 
 
+`config.js`
+
 ```javascript
 {
-  // hapi server options
+  // hapi.Server(...)
   server: {},
 
-  // hapi connections
+  // server.connection(...)
   connections: [ {
     port: 3000
   } ],
 
-  // hapi plugin registrations
+  // server.register(...)
   registrations: []
 }
 ```
@@ -257,7 +283,7 @@ server.start((err) => {
 import config from './config'
 import glue from 'glue'
 ```
-<!-- .element: class="fragment fade-down" data-fragment-index="1" -->
+<!-- .element: class="fragment fade-in" data-fragment-index="1" -->
 ```javascript
 glue.compose(config, {relativeTo: __dirname}, (err, server) => {
   if (err) {
@@ -279,11 +305,37 @@ glue.compose(config, {relativeTo: __dirname}, (err, server) => {
     console.log(`Server running at: ${server.info.uri}`)
   })
 ```
-<!-- .element: class="fragment fade-left" data-fragment-index="3" -->
+<!-- .element: class="fragment fade-in" data-fragment-index="3" -->
 ```javascript
 })
 ```
 <!-- .element: class="fragment fade-right" data-fragment-index="2" -->
+
+
+<pre><code data-trim data-noescape class="javascript" style="max-height: inherit">
+import config from './config'
+import glue from 'glue'
+
+<span class="fragment" data-fragment-index="1">glue.compose(config, {relativeTo: __dirname}, (err, server) => {
+  if (err) {
+    throw err
+  }</span>
+
+<span class="fragment" data-fragment-index="2">  server.start((err) => {
+    if (err) {
+      throw err
+    }
+
+    server.route({
+      method: 'GET'
+      // ...
+    })
+
+    console.log(`Server running at: ${server.info.uri}`)
+  })</span>
+
+})
+</code></pre>
 
 
 # getByName
@@ -300,7 +352,6 @@ server.route({
 <!-- .element: class="fragment fade-left" data-fragment-index="2" -->
 ```javascript
   handler: (request, reply) => {
-    console.log(`hello ${request.params.name}!`)
     reply(`hello ${request.params.name}!`)
   },
 ```
@@ -327,7 +378,7 @@ server.route({
 ```javascript
 server.route({
 ```
-<!-- .element: class="fragment fade-right" data-fragment-index="1" -->
+<!-- .element: class="fragment fade-left" data-fragment-index="1" -->
 ```javascript
   method: 'POST',
   path: '/orgs',
@@ -335,7 +386,6 @@ server.route({
 <!-- .element: class="fragment fade-left" data-fragment-index="2" -->
 ```javascript
   handler: (request, reply) => {
-    console.log(`posting ${request.payload}`)
     reply(request.payload).code(201)
   },
 ```
@@ -366,19 +416,31 @@ server.route({
 
 ```javascript
 server.route({
+```
+<!-- .element: class="fragment fade-left" data-fragment-index="1" -->
+```javascript
   method: 'GET',
   path: '/orgs',
+```
+<!-- .element: class="fragment fade-left" data-fragment-index="2" -->
+```javascript
   handler: (request, reply) => {
     const orgs = Object.values(db)
     console.log('GET ALL:', orgs)
     reply(orgs)
   },
+```
+<!-- .element: class="fragment fade-left" data-fragment-index="3" -->
+```javascript
   config: {
     tags: ['api']
   }
+```
+<!-- .element: class="fragment fade-left" data-fragment-index="4" -->
+```javascript
 })
 ```
-<!-- .element: class="fragment fade-up" data-fragment-index="1" -->
+<!-- .element: class="fragment fade-right" data-fragment-index="1" -->
 
 
 # Plugin
@@ -387,18 +449,23 @@ server.route({
 ```javascript
 import pack from '../package.json'
 import * as config from './config'
-
+```
+<!-- .element: class="fragment fade-left" data-fragment-index="1" -->
+```javascript
 export function register (server, options, next) {
   // do plugin stuff
 
   next()
 }
-
+```
+<!-- .element: class="fragment fade-left" data-fragment-index="2" -->
+```javascript
 register.attributes = {
   name: 'orgs',
   version: pack.version
 }
 ```
+<!-- .element: class="fragment fade-left" data-fragment-index="3" -->
 
 
 # Plugin 2
@@ -406,45 +473,61 @@ register.attributes = {
 
 ```javascript
 export function register (server, options, next) {
+```
+<!-- .element: class="fragment fade-left" data-fragment-index="1" -->
+```javascript
   server.route({
     method: 'GET',
     path: '/orgs',
     config: config.getAll
   })
-
+```
+<!-- .element: class="fragment fade-left" data-fragment-index="2" -->
+```javascript
   server.route({
     method: 'GET',
     path: '/orgs/{name}',
     config: config.getByName
   })
-
+```
+<!-- .element: class="fragment fade-left" data-fragment-index="3" -->
+```javascript
   server.route({
     method: 'POST',
     path: '/orgs',
     config: config.post
   })
-
+```
+<!-- .element: class="fragment fade-left" data-fragment-index="4" -->
+```javascript
   next()
 }
 ```
+<!-- .element: class="fragment fade-right" data-fragment-index="1" -->
 
 
 # Plugin config
 
 
-```javascript
+<pre><code data-trim data-noescape class="javascript">
 import * as handlers from './handlers'
 import * as validations from './validations'
 
-export const getAll = {
+<span class="fragment fade-left">export const getAll = {
   tags: ['api'],
   response: {
     schema: validations.orgList
   },
   handler: handlers.getAllOrgs
-}
+}</span>
+</code></pre>
 
-export const getByName = {
+
+<pre><code data-trim data-noescape class="javascript">
+import * as handlers from './handlers'
+import * as validations from './validations'
+
+<span class="fragment">export const getByName = {
   tags: ['api'],
   validate: {
     params: {
@@ -455,9 +538,15 @@ export const getByName = {
     schema: validations.org
   },
   handler: handlers.getOrgByName
-}
+}</span>
+</code></pre>
 
-export const post = {
+
+<pre><code data-trim data-noescape class="javascript">
+import * as handlers from './handlers'
+import * as validations from './validations'
+
+<span class="fragment">export const post = {
   tags: ['api'],
   validate: {
     payload: validations.org,
@@ -469,51 +558,83 @@ export const post = {
     schema: validations.org
   },
   handler: handlers.postOrg
-}
-```
+}</span>
+</code></pre>
 
 
 # Plugin validations
 
 
-```javascript
+<pre><code data-trim data-noescape class="javascript">
 import joi from 'joi'
 
-export const name = joi.string().max(10).required().example('Axway').default('Axway')
+<span class="fragment">export const name = joi.string()
+  .max(10)
+  .required()
+  .example('Axway')
+  .default('Axway')</span>
+</code></pre>
 
-export const org = joi.object({
+
+<pre><code data-trim data-noescape class="javascript">
+import joi from 'joi'
+
+export const name = joi.string() // ...
+
+<span class="fragment">export const org = joi.object({
   name,
-  email: joi.string().email().required().example('cody@email.com')
-}).unknown()
+  email: joi.string()
+    .email()
+    .required()
+    .example('cody@email.com')
+}).unknown()</span>
+</code></pre>
 
-export const orgList = joi.array().items(org).example([{name: 'Axway', email: 'cody@email.com'}])
-```
+
+<pre><code data-trim data-noescape class="javascript">
+import joi from 'joi'
+
+export const name = joi.string() // ...
+
+export const org = joi.object() // ...
+
+<span class="fragment">export const orgList = joi.array()
+  .items(org)
+  .example([{name: 'Axway', email: 'cody@email.com'}])</span>
+</code></pre>
 
 
 # Plugin handlers
 
 
-```javascript
+<pre><code data-trim data-noescape class="javascript">
 const db = {}
 
-export function getAllOrgs (request, reply) {
+<span class="fragment">export function getAllOrgs (request, reply) {
   const orgs = Object.values(db)
-  console.log('GET ALL:', orgs)
   reply(orgs)
-}
+}</span>
+</code></pre>
 
-export function getOrgByName (request, reply) {
+
+<pre><code data-trim data-noescape class="javascript">
+const db = {}
+
+<span class="fragment">export function getOrgByName (request, reply) {
   const org = db[request.params.name]
-  console.log('GET', request.params.name, org)
   reply(org)
-}
+}</span>
+</code></pre>
 
-export function postOrg (request, reply) {
-  console.log('POST', request.payload)
+
+<pre><code data-trim data-noescape class="javascript">
+const db = {}
+
+<span class="fragment">export function postOrg (request, reply) {
   db[request.payload.name] = request.payload
   reply(request.payload).code(201)
-}
-```
+}</span>
+</code></pre>
 
 
 <!-- .slide: id="prerequisites" -->
