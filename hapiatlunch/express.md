@@ -38,5 +38,4 @@ Note:
 _- [Eran Hammer of WalMart Labs presents hapi (YouTube)](https://youtu.be/Recv7vR8ZlA?list=PLB7q09icyCHVp3YLoYigTK5JisixHEBf6)_
 
 
-
 <!-- .slide: data-background-image="http://i.giphy.com/pcC2u7rl89b44.gif" -->
