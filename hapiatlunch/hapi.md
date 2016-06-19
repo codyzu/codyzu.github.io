@@ -192,7 +192,7 @@ _see [prerequisites](#/prerequisites)_
 
 ## Setup + Install
 
-```
+```bash
 git clone https://github.com/codyzu/hapi-demo.git
 cd hapi-demo
 git checkout dojo
@@ -207,11 +207,13 @@ npm install
 import hapi from 'hapi'
 ```
 <!-- .element: class="fragment fade-up" data-fragment-index="1" -->
+
 ```javascript
 const server = new hapi.Server()
 server.connection({port: 3000})
 ```
 <!-- .element: class="fragment fade-up" data-fragment-index="2" -->
+
 ```javascript
 server.route({
   method: 'GET',
@@ -222,6 +224,7 @@ server.route({
 })
 ```
 <!-- .element: class="fragment fade-up" data-fragment-index="3" -->
+
 ```javascript
 server.start((err) => {
   if (err) {
@@ -232,30 +235,6 @@ server.start((err) => {
 })
 ```
 <!-- .element: class="fragment fade-up" data-fragment-index="4" -->
-
-
-<pre><code data-trim data-noescape class="javascript" style="max-height: inherit">
-import hapi from 'hapi'
-
-<span class="fragment" data-fragment-index="1">const server = new hapi.Server()
-server.connection({port: 3000})</span>
-
-<span class="fragment" data-fragment-index="2">server.route({
-  method: 'GET',
-  path: '/',
-  handler: (request, reply) => {
-    reply('Hello world!')
-  }
-})</span>
-
-<span class="fragment" data-fragment-index="3">server.start((err) => {
-  if (err) {
-    throw err
-  }
-
-  console.log(`Server running at: ${server.info.uri}`)
-})</span>
-</code></pre>
 
 
 # config
@@ -284,6 +263,7 @@ import config from './config'
 import glue from 'glue'
 ```
 <!-- .element: class="fragment fade-in" data-fragment-index="1" -->
+
 ```javascript
 glue.compose(config, {relativeTo: __dirname}, (err, server) => {
   if (err) {
@@ -291,6 +271,7 @@ glue.compose(config, {relativeTo: __dirname}, (err, server) => {
   }
 ```
 <!-- .element: class="fragment fade-left" data-fragment-index="2" -->
+
 ```javascript
   server.start((err) => {
     if (err) {
@@ -306,36 +287,11 @@ glue.compose(config, {relativeTo: __dirname}, (err, server) => {
   })
 ```
 <!-- .element: class="fragment fade-in" data-fragment-index="3" -->
+
 ```javascript
 })
 ```
 <!-- .element: class="fragment fade-right" data-fragment-index="2" -->
-
-
-<pre><code data-trim data-noescape class="javascript" style="max-height: inherit">
-import config from './config'
-import glue from 'glue'
-
-<span class="fragment" data-fragment-index="1">glue.compose(config, {relativeTo: __dirname}, (err, server) => {
-  if (err) {
-    throw err
-  }</span>
-
-<span class="fragment" data-fragment-index="2">  server.start((err) => {
-    if (err) {
-      throw err
-    }
-
-    server.route({
-      method: 'GET'
-      // ...
-    })
-
-    console.log(`Server running at: ${server.info.uri}`)
-  })</span>
-
-})
-</code></pre>
 
 
 # getByName
@@ -499,6 +455,7 @@ export function register (server, options, next) {
   })
 ```
 <!-- .element: class="fragment fade-left" data-fragment-index="4" -->
+
 ```javascript
   next()
 }
@@ -509,25 +466,30 @@ export function register (server, options, next) {
 # Plugin config
 
 
-<pre><code data-trim data-noescape class="javascript">
+```javascript
 import * as handlers from './handlers'
 import * as validations from './validations'
+```
 
-<span class="fragment fade-left">export const getAll = {
+```javascript
+export const getAll = {
   tags: ['api'],
   response: {
     schema: validations.orgList
   },
   handler: handlers.getAllOrgs
-}</span>
-</code></pre>
+}
+```
+<!-- .element: class="fragment fade-left" -->
 
 
-<pre><code data-trim data-noescape class="javascript">
+```javascript
 import * as handlers from './handlers'
 import * as validations from './validations'
+```
 
-<span class="fragment">export const getByName = {
+```javascript
+export const getByName = {
   tags: ['api'],
   validate: {
     params: {
@@ -538,15 +500,18 @@ import * as validations from './validations'
     schema: validations.org
   },
   handler: handlers.getOrgByName
-}</span>
-</code></pre>
+}
+```
+<!-- .element: class="fragment fade-left" -->
 
 
-<pre><code data-trim data-noescape class="javascript">
+```javascript
 import * as handlers from './handlers'
 import * as validations from './validations'
+```
 
-<span class="fragment">export const post = {
+```javascript
+export const post = {
   tags: ['api'],
   validate: {
     payload: validations.org,
@@ -558,83 +523,101 @@ import * as validations from './validations'
     schema: validations.org
   },
   handler: handlers.postOrg
-}</span>
-</code></pre>
+}
+```
+<!-- .element: class="fragment fade-left" -->
 
 
 # Plugin validations
 
 
-<pre><code data-trim data-noescape class="javascript">
+```javascript
 import joi from 'joi'
+```
 
-<span class="fragment">export const name = joi.string()
+```javascript
+export const name = joi.string()
   .max(10)
   .required()
   .example('Axway')
-  .default('Axway')</span>
-</code></pre>
+  .default('Axway')
+```
+<!-- .element: class="fragment fade-left" -->
 
 
-<pre><code data-trim data-noescape class="javascript">
+```javascript
 import joi from 'joi'
 
 export const name = joi.string() // ...
+```
 
-<span class="fragment">export const org = joi.object({
+```javascript
+export const org = joi.object({
   name,
   email: joi.string()
     .email()
     .required()
     .example('cody@email.com')
-}).unknown()</span>
-</code></pre>
+}).unknown()
+```
+<!-- .element: class="fragment fade-left" -->
 
 
-<pre><code data-trim data-noescape class="javascript">
+```javascript
 import joi from 'joi'
 
 export const name = joi.string() // ...
-
 export const org = joi.object() // ...
+```
 
-<span class="fragment">export const orgList = joi.array()
+```javascript
+export const orgList = joi.array()
   .items(org)
-  .example([{name: 'Axway', email: 'cody@email.com'}])</span>
-</code></pre>
+  .example([{name: 'Axway', email: 'cody@email.com'}])
+```
+<!-- .element: class="fragment fade-left" -->
 
 
 # Plugin handlers
 
 
-<pre><code data-trim data-noescape class="javascript">
+```javascript
 const db = {}
+```
 
-<span class="fragment">export function getAllOrgs (request, reply) {
+```javascript
+export function getAllOrgs (request, reply) {
   const orgs = Object.values(db)
   reply(orgs)
-}</span>
-</code></pre>
+}
+```
+<!-- .element: class="fragment fade-left" -->
 
 
-<pre><code data-trim data-noescape class="javascript">
+```javascript
 const db = {}
+```
 
-<span class="fragment">export function getOrgByName (request, reply) {
+```javascript
+export function getOrgByName (request, reply) {
   const org = db[request.params.name]
   reply(org)
-}</span>
-</code></pre>
+}
+```
+<!-- .element: class="fragment fade-left" -->
 
 
-<pre><code data-trim data-noescape class="javascript">
+```javascript
 const db = {}
+```
 
-<span class="fragment">export function postOrg (request, reply) {
+```javascript
+export function postOrg (request, reply) {
   db[request.payload.name] = request.payload
   reply(request.payload).code(201)
-}</span>
-</code></pre>
+}
+```
+<!-- .element: class="fragment fade-left" -->
 
 
 <!-- .slide: id="prerequisites" -->
