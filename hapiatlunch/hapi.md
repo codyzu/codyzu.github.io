@@ -200,7 +200,8 @@ npm install
 ```
 
 
-## Hello world
+# Hello world
+
 
 ```javascript
 import hapi from 'hapi'
@@ -233,7 +234,8 @@ server.start((err) => {
 <!-- .element: class="fragment fade-up" data-fragment-index="4" -->
 
 
-## config
+# config
+
 
 ```javascript
 {
@@ -255,7 +257,7 @@ server.start((err) => {
 import config from './config'
 import glue from 'glue'
 ```
-<!-- .element: class="fragment fade-right" data-fragment-index="1" -->
+<!-- .element: class="fragment fade-down" data-fragment-index="1" -->
 ```javascript
 glue.compose(config, {relativeTo: __dirname}, (err, server) => {
   if (err) {
@@ -281,15 +283,16 @@ glue.compose(config, {relativeTo: __dirname}, (err, server) => {
 ```javascript
 })
 ```
-<!-- .element: class="fragment fade-right" data-fragment-index="1" -->
+<!-- .element: class="fragment fade-right" data-fragment-index="2" -->
 
 
-### getByName
+# getByName
+
 
 ```javascript
 server.route({
 ```
-<!-- .element: class="fragment fade-right" data-fragment-index="1" -->
+<!-- .element: class="fragment fade-left" data-fragment-index="1" -->
 ```javascript
   method: 'GET',
   path: '/orgs/{name}',
@@ -318,7 +321,8 @@ server.route({
 <!-- .element: class="fragment fade-right" data-fragment-index="1" -->
 
 
-### post
+# post
+
 
 ```javascript
 server.route({
@@ -357,7 +361,8 @@ server.route({
 <!-- .element: class="fragment fade-right" data-fragment-index="1" -->
 
 
-## getAll
+# getAll
+
 
 ```javascript
 server.route({
@@ -376,7 +381,8 @@ server.route({
 <!-- .element: class="fragment fade-up" data-fragment-index="1" -->
 
 
-## Plugin
+# Plugin
+
 
 ```javascript
 import pack from '../package.json'
@@ -395,7 +401,8 @@ register.attributes = {
 ```
 
 
-## Plugin 2
+# Plugin 2
+
 
 ```javascript
 export function register (server, options, next) {
@@ -422,7 +429,8 @@ export function register (server, options, next) {
 ```
 
 
-## Plugin config
+# Plugin config
+
 
 ```javascript
 import * as handlers from './handlers'
@@ -465,7 +473,8 @@ export const post = {
 ```
 
 
-## Plugin validations
+# Plugin validations
+
 
 ```javascript
 import joi from 'joi'
@@ -481,7 +490,8 @@ export const orgList = joi.array().items(org).example([{name: 'Axway', email: 'c
 ```
 
 
-## Plugin handlers
+# Plugin handlers
+
 
 ```javascript
 const db = {}
