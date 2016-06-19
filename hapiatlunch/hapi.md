@@ -801,43 +801,6 @@ Note:
 
 
 
-# Live Coding part 2
-
-
-## Models
-
-> ```git checkout --force dojo07```
-
-**EXERCISE:** use model in `getByName` + `post`
-
-><!-- .element: class="fragment fade-up highlight-blue" data-fragment-index="1" --> ```git checkout --force dojo08```<!-- .element: class="fragment fade-up" data-fragment-index="1" -->
-
-
-* ## Error Handling
-* ## Code reuse
-* ## Pre handlers
-
-> ```git checkout --force dojo09```
-
-**EXERCISE:** refactor all handlers using pre handlers
-
-><!-- .element: class="fragment fade-up highlight-blue"  data-fragment-index="1" --> ```git checkout --force dojo10```<!-- .element: class="fragment fade-up" data-fragment-index="1" -->
-
-Note:
-
-* pre handlers -> allow breaking business into maintainable, reusable pieces
-
-
-# Bug???
-
-## Hint: POST <!-- .element: class="fragment fade-up" data-fragment-index="1" -->
-
-## returns code 200, expecting code 201 <!-- .element: class="fragment fade-up" data-fragment-index="2" -->
-
-><!-- .element: class="fragment fade-up highlight-blue" data-fragment-index="3" --> ```git checkout --force dojo99```<!-- .element: class="fragment fade-up" data-fragment-index="3" -->
-
-
-
 # Out of Scope
 
 
