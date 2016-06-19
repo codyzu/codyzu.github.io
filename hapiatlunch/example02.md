@@ -194,3 +194,5 @@ npm start
 http://localhost:3000/documentation
 
 _Note: swagger doc and UI_
+
+![nodejs logo](images/nodejs.png)

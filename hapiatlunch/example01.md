@@ -63,6 +63,8 @@ npm start
 
 http://localhost:3000
 
+![nodejs logo](images/nodejs.png)
+
 
 <!-- .slide: id="prerequisites" -->
 ## Prerequisites: Tools
