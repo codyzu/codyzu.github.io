@@ -83,7 +83,6 @@ import * as validations from './validations'
 
 ```javascript
 export const getAll = {
-  tags: ['api'],
   response: {
     schema: validations.orgList
   },
@@ -102,7 +101,6 @@ import * as validations from './validations'
 
 ```javascript
 export const getByName = {
-  tags: ['api'],
   validate: {
     params: {
       name: validations.name
@@ -126,7 +124,6 @@ import * as validations from './validations'
 
 ```javascript
 export const post = {
-  tags: ['api'],
   validate: {
     payload: validations.org,
     options: {
@@ -249,7 +246,7 @@ export function postOrg (request, reply) {
 # Demo \#3
 
 ```bash
-git checkout demo03
+git checkout example03
 npm start
 ```
 

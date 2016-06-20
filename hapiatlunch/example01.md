@@ -57,7 +57,7 @@ server.start((err) => {
 ### Hello World
 
 ```bash
-git checkout demo01
+git checkout example01
 npm start
 ```
 

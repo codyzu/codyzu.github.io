@@ -187,7 +187,7 @@ server.route({
 # Demo \#2
 
 ```bash
-git checkout demo02
+git checkout example02
 npm start
 ```
 
