@@ -1,9 +1,9 @@
 gems:
   - jekyll-redirect-from
 
-exclude:
-  - hapi
-  - hapiatlunch
+# exclude:
+#   - hapi
+#   - hapiatlunch
 
 defaults:
   -
