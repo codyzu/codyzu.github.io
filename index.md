@@ -2,7 +2,7 @@
 layout: default
 title: Welcome to the index
 ---
-# Cody Zuschlag
+# Cody Zuschlag ![cody](hapi/images/cody1_bw_100px.jpg)
 
 #### _Passion for all things node.js_
 
