@@ -6,11 +6,13 @@ title: Welcome to the index
 
 #### _Passion for all things node.js_
 
+---
+
 <div class="panel panel-primary">
   <div class="panel-heading">
     <h3 class="panel-title">Presentations</h3>
   </div>
   <div class="panel-body">
-    ### [hapijs](/hapiatlunch)
+    <h3><a href="/hapiatlunch">hapijs</a></h3>
   </div>
 </div>
