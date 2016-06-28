@@ -13,6 +13,8 @@ title: Welcome to the index
     <h3 class="panel-title">Presentations</h3>
   </div>
   <div class="panel-body">
-    <h3><a href="/hapiatlunch">hapijs</a></h3>
+    <ol>
+      <li><h3><a href="/hapiatlunch">hapijs</a></h3></li>
+    </ol>
   </div>
 </div>
