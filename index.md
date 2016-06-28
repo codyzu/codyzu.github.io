@@ -8,4 +8,4 @@ _Passion for all things node.js_
 
 ## Presentations:
 
-* [hapijs](/hapiatlunch)
+* ### [hapijs](/hapiatlunch)
