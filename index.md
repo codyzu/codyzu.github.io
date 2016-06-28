@@ -4,4 +4,8 @@ title: Welcome to the index
 ---
 # Cody Zuschlag
 
-Welcome to my site.
+_Passion for all things node.js_
+
+## Presentations:
+
+* [hapijs](/hapiatlunch)
