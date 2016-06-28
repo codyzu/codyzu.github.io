@@ -2,7 +2,7 @@
 layout: default
 title: Welcome to the index
 ---
-# Cody Zuschlag ![cody](hapi/images/cody1_bw_100px.jpg)
+# ![cody](hapi/images/cody1_bw_100px.jpg) Cody Zuschlag
 
 #### _Passion for all things node.js_
 
@@ -13,8 +13,8 @@ title: Welcome to the index
     <h3 class="panel-title">Presentations</h3>
   </div>
   <div class="panel-body">
-    <ol>
+    <ul>
       <li><h3><a href="/hapiatlunch">hapijs</a></h3></li>
-    </ol>
+    </ul>
   </div>
 </div>
