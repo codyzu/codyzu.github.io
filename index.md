@@ -13,7 +13,8 @@ title: Welcome to the index
   </div>
   <div class="panel-body">
     <ul>
-      <li><h3><a href="/hapiatlunch">hapijs</a></h3></li>
+      <li><h3><a href="/hapi">hapijs dojo</a></h3> coding workshop presented at Axway Annecy June 15, 2016</li>
+      <li><h3><a href="/hapiatlunch">hapijs</a></h3> presentation presented at Axway Paris June 20, 2016</li>
     </ul>
   </div>
 </div>
