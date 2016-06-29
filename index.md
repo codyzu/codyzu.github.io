@@ -3,6 +3,11 @@ title: Welcome to the index
 ---
 # ![cody](hapi/images/cody1_bw_100px.jpg) Cody Zuschlag
 
+<h1>Hello</h1> <ul class="nav nav-pills">
+  <li class="active"><a href="#">Home</a></li>
+  <li><a href="#">Profile</a></li>
+</ul>
+
 #### _Passion for all things node.js_
 
 ---
