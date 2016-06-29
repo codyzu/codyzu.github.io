@@ -23,16 +23,16 @@ title: Resume
     <div class="well">
       <h4 style="font-variant: small-caps;">Computer Skills</h4>
 
-      <h3>Node.js:</h3>
+      <h5>Node.js:</h5>
       <p>npm, es2016, babel, hapi, express, mocha, istanbul, gulp, pouchdb, offline-first</p>
 
-      <h3>Languages:</h3>
+      <h5>Languages:</h5>
       <p>JavaScript, Java, C#, C++, C, Objective-C, Python, Groovy</p>
       <p>HTML, CSS, JSON, XML, YML, ASP.NET</p>
       <p>UML, PL/SQL, Bash, ADO.NET, Lua</p>
     </div>
   </div>
   <div class="col-md-8">
-    <h4 style="font-variant: small-caps;">Summary</h4>
+    <h4 style="font-variant: small-caps;">Career Summary</h4>
   </div>
 </div>
