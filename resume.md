@@ -7,9 +7,9 @@ title: Resume
 </div>
 
 <h3>Profile</h3>
-<emphasis>
+<p><em><strong>
 A node.js expert specializing in back-end services including REST API’s, micro-service architecture, and
 relational and NoSQL databases. I am a highly motivated, hard working, professional engineer with a passion
 for communication, open source, and all things node.js who thrives in a challenging team orientated work
 environment.
-</emphasis>
+</stron></em></p>
