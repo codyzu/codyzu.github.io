@@ -13,8 +13,8 @@ for communication, open source, and all things node.js who thrives in a challeng
 environment.</em></strong></p>
 
 <div class="row">
-  <div class="well">
-    <div class=".col-md-4">
+  <div class=".col-md-4">
+    <div class="well">
       <h4 style="font-variant: small-caps;">Skills</h4>
     </div>
   </div>
