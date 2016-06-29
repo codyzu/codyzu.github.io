@@ -15,6 +15,7 @@ title: Welcome to the index
     <a href="https://fr.linkedin.com/pub/cody-zuschlag/25/8b0/b5b">
           <img src="https://static.licdn.com/scds/common/u/img/webpromo/btn_viewmy_160x33.png" width="160" height="33" border="0" alt="View Cody Zuschlag's profile on LinkedIn">
     </a>
+    <a href="https://github.com/codyzu">View me on <img src="images/GitHub-Mark-64px.png" style="background-color:white" /></a>
   </div>
 </div>
 
