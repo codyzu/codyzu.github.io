@@ -11,7 +11,7 @@ title: Cody Zuschlag
       <img src="https://static.licdn.com/scds/common/u/img/webpromo/btn_myprofile_160x33.png" width="160" height="33" border="0" alt="View Cody Zuschlag's profile on LinkedIn">
     </a>
   </li>
-  <li><a href="https://github.com/codyzu">View me on <img src="images/GitHub-Mark-Light-32px.png" /></a></li>
+  <li><a href="https://github.com/codyzu">view me on GitHub <img src="images/GitHub-Mark-Light-32px.png" /></a></li>
 </ul>
 
 ---
