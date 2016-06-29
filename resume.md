@@ -21,10 +21,15 @@ title: Resume
 <div class="row">
   <div class="col-md-4">
     <div class="well">
-      <h4 style="font-variant: small-caps;">Skills</h4>
-      <ul>
-        <li>node.js</li>
-      </ul>
+      <h4 style="font-variant: small-caps;">Computer Skills</h4>
+
+      <h3>Node.js:</h3>
+      <p>npm, es2016, babel, hapi, express, mocha, istanbul, gulp, pouchdb, offline-first</p>
+
+      <h3>Languages:</h3>
+      <p>JavaScript, Java, C#, C++, C, Objective-C, Python, Groovy</p>
+      <p>HTML, CSS, JSON, XML, YML, ASP.NET</p>
+      <p>UML, PL/SQL, Bash, ADO.NET, Lua</p>
     </div>
   </div>
   <div class="col-md-8">
