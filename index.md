@@ -12,9 +12,8 @@ title: Welcome to the index
     <h3 class="panel-title">Contact</h3>
   </div>
   <div class="panel-body">
-    <ul>
-      <li><h3><a href="www.linkedin.com/in/codyzu">LinkedIn</a></h3></li>
-    </ul>
+    <script src="//platform.linkedin.com/in.js" type="text/javascript"></script>
+    <script type="IN/MemberProfile" data-id="https://www.linkedin.com/in/codyzu" data-format="inline"></script>
   </div>
 </div>
 
