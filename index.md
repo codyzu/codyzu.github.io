@@ -18,24 +18,6 @@ title: Welcome to the index
 
 <div class="panel panel-default">
   <div class="panel-heading">
-    <h3 class="panel-title">Contact</h3>
-  </div>
-  <div class="panel-body">
-    <ul>
-      <li>
-        <a href="https://fr.linkedin.com/pub/cody-zuschlag/25/8b0/b5b">
-              <img src="https://static.licdn.com/scds/common/u/img/webpromo/btn_viewmy_160x33.png" width="160" height="33" border="0" alt="View Cody Zuschlag's profile on LinkedIn">
-        </a>
-      </li>
-      <li>
-        <a href="https://github.com/codyzu">View me on <img src="images/GitHub-Mark-64px.png" style="background-color:white" /></a>
-      </li>
-    </ul>
-  </div>
-</div>
-
-<div class="panel panel-default">
-  <div class="panel-heading">
     <h3 class="panel-title">Presentations</h3>
   </div>
   <div class="panel-body">
