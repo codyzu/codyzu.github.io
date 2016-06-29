@@ -18,7 +18,7 @@ environment.</em></strong></p>
       <h4 style="font-variant: small-caps;">Skills</h4>
       <ul>
         <li>node.js</li>
-      </ul
+      </ul>
     </div>
   </div>
   <div class=".col-md-8">
