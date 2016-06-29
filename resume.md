@@ -12,4 +12,13 @@ relational and NoSQL databases. I am a highly motivated, hard working, professio
 for communication, open source, and all things node.js who thrives in a challenging team orientated work
 environment.</em></strong></p>
 
-<div class
+<div class="row">
+  <div class="well">
+    <div class=".col-md-4">
+      <h4 style="font-variant: small-caps;">Skills</h4>
+    </div>
+  </div>
+  <div class=".col-md-8">
+    <h4 style="font-variant: small-caps;">Summary</h4>
+  </div>
+</div>
