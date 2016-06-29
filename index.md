@@ -12,8 +12,9 @@ title: Welcome to the index
     <h3 class="panel-title">Contact</h3>
   </div>
   <div class="panel-body">
-    <script src="//platform.linkedin.com/in.js" type="text/javascript"></script>
-    <script type="IN/MemberProfile" data-id="https://www.linkedin.com/in/codyzu" data-format="inline"></script>
+    <a href="https://fr.linkedin.com/pub/cody-zuschlag/25/8b0/b5b">
+          <img src="https://static.licdn.com/scds/common/u/img/webpromo/btn_viewmy_160x33.png" width="160" height="33" border="0" alt="View Cody Zuschlag's profile on LinkedIn">
+    </a>
   </div>
 </div>
 
