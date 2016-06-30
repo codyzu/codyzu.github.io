@@ -1,19 +1,11 @@
 ---
 layout: default2
-title: Cody Zuschlag
+title: Home
+in_menu: true
 ---
 # ![cody](hapi/images/cody1_bw_100px.jpg) Cody Zuschlag
 
 #### _Passion for all things node.js_
-
-<ul class="nav nav-pills">
-  <li>
-    <a href="https://fr.linkedin.com/pub/cody-zuschlag/25/8b0/b5b">
-      <img src="https://static.licdn.com/scds/common/u/img/webpromo/btn_myprofile_160x33.png" width="160" height="33" border="0" alt="View Cody Zuschlag's profile on LinkedIn">
-    </a>
-  </li>
-  <li><a href="https://github.com/codyzu">view me on GitHub <img src="images/GitHub-Mark-Light-32px.png" /></a></li>
-</ul>
 
 ---
 
