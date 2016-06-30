@@ -1,4 +1,5 @@
 ---
+layout: default2
 title: Cody Zuschlag
 ---
 # ![cody](hapi/images/cody1_bw_100px.jpg) Cody Zuschlag
