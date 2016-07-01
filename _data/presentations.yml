@@ -1,0 +1,6 @@
+- name: hapijs dojo
+  description: coding workshop presented at Axway Annecy June 15, 2016
+  url: /hapi
+- name: hapi
+  description: presentation presented at Axway Paris June 20, 2016
+  url: /hapiatlunch
