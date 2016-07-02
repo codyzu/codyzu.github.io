@@ -6,7 +6,7 @@ in_menu: true
 <div class="row">
   <div class="col-md-12 jumbotron">
     <div class="col-sm-4">
-      <img class="img-responsive img-rounded" src="images/cody1_bw_400px.jpg" />
+      <img class="img-responsive img-circle" src="images/cody1_bw_400px.jpg" />
     </div>
     <div class="col-sm-8">
       <h1>Cody Zuschlag</h1>
@@ -14,7 +14,8 @@ in_menu: true
     </div>
   </div>
 </div>
-<div class="row">
+
+<div class="row voffset60">
   <div class="col-md-12">
     <div class="alert alert-danger" role="alert">
       <h3>
@@ -27,12 +28,12 @@ in_menu: true
 </div>
 <div class="row">
   <div class="col-md-12">
-      <h4>
+      <h3 class="text-primary">
         Why not hire a professional software engineer with over 10 years experience?
-      </h4>
+      </h3>
   </div>
 </div>
-<div class="row">
+<div class="row voffset30">
   <div class="col-sm-9">
     <ul class="list-group">
       <li class="list-group-item"><h5>Node.js Backend Services (REST APIs, Mobile Backend, and more!)</h5></li>
@@ -50,7 +51,7 @@ in_menu: true
 </div>
 <div class="row">
   <div class="col-md-12">
-    <h5>
+    <h4>
       <span class="glyphicon glyphicon-envelope" aria-hidden="true"></span>
       <span class="sr-only">Contact:</span>
       Visit my
@@ -60,17 +61,14 @@ in_menu: true
       or
       <a href="mailto:cody.zuschlag@gmail.com">send an email</a>
       for more information on how we can make your project a success!
-    </h5>
+    </h4>
   </div>
 </div>
-<div class="row">
+
+<div class="row voffset90">
   <div class="col-md-12">
-    <hr />
-  </div>
-</div>
-<div class="row">
-  <div class="col-md-12">
-    <a class="twitter-timeline" data-theme="dark" href="https://twitter.com/codyzus">Tweets by codyzus</a>
+
+    <a class="twitter-timeline" {% if site.dark %}data-theme="dark"{% endif %} href="https://twitter.com/codyzus">Tweets by codyzus</a>
     <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
   </div>
 </div>

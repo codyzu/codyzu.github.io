@@ -24,3 +24,6 @@ gems:
   - jekyll-redirect-from
 
 exclude: [vendor, '*/node_modules']
+
+dark: false
+css_file: bootstrap.cosmo.min.css
