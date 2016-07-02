@@ -6,6 +6,8 @@ Senior Software Engineer
 
 Axway Engage
 
+_coding workshop presented at Axway Annecy June 15, 2016_
+
 Note:
 "n'importe quelle moment..."
 "dans 15 minutes"

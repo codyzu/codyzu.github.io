@@ -6,6 +6,8 @@ Senior Software Engineer
 
 Axway Engage
 
+_presented at Axway Paris June 20, 2016_
+
 Note:
 "n'importe quelle moment..."
 "dans 15 minutes"
