@@ -67,24 +67,6 @@ in_menu: true
   <div class="col-md-12">
     <hr />
   </div>
-  <div class="col-md-12">
-    <h2>
-      Presentations
-      <span class="glyphicon glyphicon-blackboard" aria-hidden="true"></span>
-      <span class="sr-only">Screen:</span>
-    </h2>
-    <ul class="list-group">
-      {% for presentation in site.data.presentations %}
-      <li class="list-group-item">
-        <h3 class="list-group-item-heading"><a href="{{ presentation.url | prepend: site.baseurl }}">{{presentation.name}}</a></h3>
-        <p class="list-group-item-text">{{ presentation.description }}</p>
-      </li>
-      {% endfor %}
-    </ul>
-  </div>
-  <div class="col-md-12">
-    <hr />
-  </div>
 </div>
 <div class="row">
   <div class="col-md-12">
