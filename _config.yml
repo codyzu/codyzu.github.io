@@ -25,5 +25,6 @@ gems:
 
 exclude: [vendor, '*/node_modules']
 
-dark: false
-css_file: bootstrap.cosmo.min.css
+dark_page: false
+dark_header: false
+css_file: bootstrap.lumen.min.css
