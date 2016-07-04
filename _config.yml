@@ -26,5 +26,5 @@ gems:
 exclude: [vendor, '*/node_modules']
 
 dark_page: false
-dark_header: true
-theme: cosmo
+dark_header: false
+theme: superhero
