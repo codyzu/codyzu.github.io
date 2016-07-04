@@ -27,4 +27,4 @@ exclude: [vendor, '*/node_modules']
 
 dark_page: false
 dark_header: true
-css_file: bootstrap.cosmo.min.css
+theme: cosmo

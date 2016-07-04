@@ -1,0 +1,31 @@
+/*
+ * Custom defined css defined AFTER bootstrap and theme
+ */
+
+body {
+  padding-top: $navbar-height;
+}
+
+.voffset30  { margin-top: 30px; }
+.voffset60  { margin-top: 60px; }
+.voffset90  { margin-top: 90px; }
+.voffsetbotom90  { margin-bottom: 90px; }
+
+.navbar-twitter {
+  // the twitter button has height of 25
+  @include navbar-vertical-align(25px);
+
+  @media (min-width: $grid-float-breakpoint) {
+    float: left;
+    margin-left: $navbar-padding-horizontal;
+    margin-right: $navbar-padding-horizontal;
+  }
+}
+
+.splash {
+  @include container-fixed;
+  background-color: $jumbotron-bg;
+  padding-top: 100px;
+  padding-bottom: 100px;
+  // width: 100%;
+}
