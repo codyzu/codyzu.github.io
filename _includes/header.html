@@ -1,27 +1,59 @@
-<header class="site-header">
+<nav class="navbar navbar-default navbar-fixed-top">
+  <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="/">codyzu</a>
+    </div>
 
-  <div class="wrapper">
-
-    <a class="site-title" href="{{ site.baseurl }}/">{{ site.title }}</a>
-
-    <nav class="site-nav">
-      <a href="#" class="menu-icon">
-        <svg viewBox="0 0 18 15">
-          <path fill="#424242" d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.031C17.335,0,18,0.665,18,1.484L18,1.484z"/>
-          <path fill="#424242" d="M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0c0-0.82,0.665-1.484,1.484-1.484 h15.031C17.335,6.031,18,6.696,18,7.516L18,7.516z"/>
-          <path fill="#424242" d="M18,13.516C18,14.335,17.335,15,16.516,15H1.484C0.665,15,0,14.335,0,13.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.031C17.335,12.031,18,12.696,18,13.516L18,13.516z"/>
-        </svg>
-      </a>
-
-      <div class="trigger">
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav">
         {% for my_page in site.pages %}
-          {% if my_page.title %}
-          <a class="page-link" href="{{ my_page.url | prepend: site.baseurl }}">{{ my_page.title }}</a>
+          {% if my_page.title and my_page.in_menu %}
+          <li {% if page == my_page %}class="active"{% endif %}>
+            <a href="{{ my_page.url | prepend: site.baseurl }}">{{ my_page.title }}{% if page == my_page %}<span class="sr-only">(current)</span>{% endif %}</a>
+          </li>
           {% endif %}
         {% endfor %}
-      </div>
-    </nav>
-
-  </div>
-
-</header>
+        <li>
+          <a href="{{ site.baseurl }}/Cody_Zuschlag_CV_2016_en.pdf">
+            Resume (PDF
+            <span class="glyphicon glyphicon-save-file" aria-hidden="true"></span>
+            <span class="sr-only">File</span>)
+          </a>
+        </li>
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Presentations <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            {% for presentation in site.data.presentations %}
+            <li>
+              <a href="{{ presentation.url | prepend: site.baseurl }}">{{presentation.name}}</a>
+            </li>
+            {% endfor %}
+          </ul>
+        </li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li>
+          <a class="navbar-link" href="https://fr.linkedin.com/pub/cody-zuschlag/25/8b0/b5b">
+            <img src="https://static.licdn.com/scds/common/u/img/webpromo/btn_liprofile_blue_80x15.png" width="80" height="15" border="0" alt="View Cody Zuschlag's profile on LinkedIn">
+          </a>
+        </li>
+        <li>
+          <a class="navbar-link" href="https://github.com/codyzu">GitHub <img src="images/{% if site.dark_header %}GitHub-Mark-Light-18px.png{% else %}GitHub-Mark-Dark-18px.png{% endif %}" /> profile</a>
+        </li>
+        <li>
+          <p class="navbar-twitter">
+            <a href="https://twitter.com/codyzus" class="twitter-follow-button" data-show-count="false">Follow @codyzus</a><script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+          </p>
+        </li>
+      </ul>
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>

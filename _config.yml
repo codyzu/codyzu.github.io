@@ -27,4 +27,3 @@ exclude: [vendor, '*/node_modules']
 
 dark_page: false
 dark_header: true
-theme: superhero
