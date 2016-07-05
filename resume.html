@@ -33,7 +33,7 @@ in_menu: true
       <h3>Computer Skills</h3>
 
       {% for skill in site.data.resume.skills %}
-        <h6>{{ skill.name }}:</h6>
+        <h5>{{ skill.name }}:</h5>
         {% for sub_skill in skill.sub_skills %}
         <p>{{ sub_skill }}</p>
         {% endfor %}
@@ -83,6 +83,19 @@ in_menu: true
       </div>
       {% endfor %}
     </div>
+
+    <h3>Professional Development</h3>
+
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-md-12">
+          {% for development in site.data.resume.professional_development %}
+          <p>{{ development }}</p>
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+
   </div>
 </div>
 

@@ -89,3 +89,9 @@ education:
     description: Top of class with honors and multiple awards for academic excellence
     school: OREGON INSTITUTE OF TECHNOLOGY
     where: Klamath Falls, Oregon, U.S.A.
+
+professional_development:
+  - Attended <a href="http://2015.dotjs.io/">dotJS 2015</a>, Paris, France
+  - Attended <a href="https://www.mix-it.fr/">Mix-IT 2016</a>, Lyon, France
+  - Presented hapijs trainings in Axway (Annecy and Paris, France)
+  - Contributing member of the <a href="http://hood.ie/">hoodie</a> project
