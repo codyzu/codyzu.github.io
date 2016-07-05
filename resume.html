@@ -33,7 +33,7 @@ in_menu: true
       <h3>Computer Skills</h3>
 
       {% for skill in site.data.resume.skills %}
-        <h5>{{ skill.name }}:</h5>
+        <h4>{{ skill.name }}:</h4>
         {% for sub_skill in skill.sub_skills %}
         <p>{{ sub_skill }}</p>
         {% endfor %}
