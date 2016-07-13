@@ -14,26 +14,40 @@
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
-        {% for my_page in site.pages %}
-          {% if my_page.title and my_page.in_menu %}
-          <li {% if page == my_page %}class="active"{% endif %}>
-            <a href="{{ my_page.url | prepend: site.baseurl }}">{{ my_page.title }}{% if page == my_page %}<span class="sr-only">(current)</span>{% endif %}</a>
-          </li>
-          {% endif %}
-        {% endfor %}
         <li>
-          <a href="{{ site.baseurl }}/Cody_Zuschlag_CV_2016_en.pdf">
-            Resume (PDF
-            <span class="glyphicon glyphicon-save-file" aria-hidden="true"></span>
-            <span class="sr-only">File</span>)
-          </a>
+          <a href="{{ site.baseurl }}/index">Home</a>
+        </li>
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Resume / CV <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li>
+              <a href="{{ site.baseurl }}/resume">online version</a>
+            </li>
+            <li>
+              <a href="{{ site.baseurl }}/Cody_Zuschlag_CV_2016_en.pdf">
+                PDF version 
+                <span class="glyphicon glyphicon-save-file" aria-hidden="true"></span>
+                <span class="sr-only">File</span>
+              </a>
+            </li>
+          </ul>
         </li>
         <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Presentations <span class="caret"></span></a>
           <ul class="dropdown-menu">
             {% for presentation in site.data.presentations %}
             <li>
-              <a href="{{ presentation.url | prepend: site.baseurl }}">{{presentation.name}}</a>
+              <a href="{{ presentation.url | prepend: site.baseurl }}">{{ presentation.name }}</a>
+            </li>
+            {% endfor %}
+          </ul>
+        </li>
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Projects <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            {% for project in site.data.projects %}
+            <li>
+              <a href="{{ project.url }}">{{ project.name }}</a>
             </li>
             {% endfor %}
           </ul>
