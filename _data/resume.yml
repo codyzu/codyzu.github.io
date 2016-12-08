@@ -11,12 +11,11 @@ work_experience:
     summary: Market leader in software and services that govern the flow of data
     points:
       - Developed node.js back-end micro-services delivered in docker images for cloud deployment (using Kanban methodology).
+      - Implemented instant deployment into build pipeline to allow instant deployments of entire solution using docker, docker-compose, and docker-machine.
       - Presented and facilitated workshops to train employees to use new node.js technologies (including migrating services from express to hapi).
       - Developed and tested user stories for a large scale OSGi and MongoDB based web application written in Java, JavaScript (backbone and jQuery), HTML5, and CSS (less) (using Agile Scrum methodology).
-      - Architected a performance testing strategy and led a team of developers in its implementation (using on-site VMWare ESXi servers and Amazon AWS cloud). Visualized performance results with InfluxDB and Grafana.
-      - Designed, implemented, and led an automated migration for a major version change with a team of developers.
-      - Developed test tooling in Python and BDD (jBehave).
-      - Authored a Capacity Planning Guide that provided recommendations for large scale deployments based on performance test results.
+      - Architected a performance testing strategy and led a team of developers in its implementation (using on-site VMWare ESXi servers and Amazon AWS cloud). Visualized performance results with InfluxDB and Grafana. Authored a Capacity Planning Guide that provided recommendations for large scale deployments based on performance test results.
+      - Designed, implemented, and led a team of devs on an automated migration strategy for a major version change.
   - position: SOLUTION DEVELOPER
     start: 2011-03-01
     end: 2013-02-01
@@ -52,31 +51,35 @@ work_experience:
       - Developed and maintained testing tools (C#).
 
 skills:
-  - name: Node.js
+  - name: Node.js / JavaScript
     sub_skills:
-      - npm, es2016, babel, hapi, express, mocha, istanbul, gulp, pouchdb, offline-first
+      - es5, es2015, es2017, babel
+      - npm, gulp
+      - eslint, standard, xo
+      - AVA, tape, mocha, nyc, istanbul
+      - hapi, express, pouchdb, react, electron
+  - name: Continuous integration
+    sub_skills:
+      - Git, GitHub, GitLab
+      - Travis, GitLab Builder, Jenkins
+      - Sonar, sonar-cube
+  - name: Containerization / Virtualization
+    sub_skills:
+      - Docker, docker-compose, docker-machine, Kubernetis
+      - VMWare ESXi, Ansible
   - name: Languages
     sub_skills:
-      - JavaScript, Java, C#, C++, C, Objective-C, Python, Groovy
-      - HTML, CSS, JSON, XML, YML, ASP.NET
-      - UML, PL/SQL, Bash, ADO.NET, Lua
+      - JavaScript, Java, C#, C++, C, Objective-C, Python
+      - HTML, CSS, JSON, XML, YML
+      - UML, PL/SQL, Bash, Lua
   - name: Software
     sub_skills:
-      - Atom, IntelliJ IDEA, Eclispse, Visual Studio, IAR-EWARM
-      - Jenkins, Maven, Sonar, NuGet, Git, Subversion
+      - Atom, MS Code, IntelliJ IDEA, Eclispse, Visual Studio
       - InfluxDB, Grafana, Graphite
-      - Docker, VMWare ESXi, Ansible, Kubernetis
-      - Microsoft Office, SharePoint, Enterprise Architect, VersionOne, PhotoShop, Gimp
-  - name: Hardware
-    sub_skills:
-      - Logic synthesis for FPGAs and PLDs in VHDL, Verilog, Schematic
-      - Quartus 2, Leonardo Spectrum, and Modelsim
-      - USB, Ethernet, I2C, SPI, CAN, LIN, Serial
+      - Jira, Crucible, Version One, Microsoft Office, SharePoint, Enterprise Architect, PhotoShop, Gimp
   - name: Operating Systems
     sub_skills:
-      - Microsoft Windows, Windows Server, Windows Compacted Embedded
-      - Apple Mac OS X, iOS
-      - Unix, Linux, Ubuntu, Arch, Debian, CentOS, openSUSE, QNX
+      - Microsoft Windows, Windows Server, Windows Compacted Embedded, Apple Mac OS X, iOS, Linux
 
 education:
   - degree: Bachelor of Science in Software Engineering Technology
@@ -91,7 +94,7 @@ education:
     where: Klamath Falls, Oregon, U.S.A.
 
 professional_development:
-  - Attended <a href="http://2015.dotjs.io/">dotJS 2015</a>, Paris, France
+  - Attended <h href="https://www.dotjs.io/">dotJS 2016</a> and <a href="http://2015.dotjs.io/">dotJS 2015</a>, Paris, France
   - Attended <a href="https://www.mix-it.fr/">Mix-IT 2016</a>, Lyon, France
   - Presented hapijs trainings in Axway (Annecy and Paris, France)
   - Contributing member of the <a href="http://hood.ie/">hoodie</a> project
